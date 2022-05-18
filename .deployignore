@@ -6,11 +6,11 @@ node_modules
 .deployignore
 .editorconfig
 .eslintignore
-.eslint
+.eslintrc
 .gitignore
 .nvmrc
 .stylelintignore
-.stylelint
+.stylelintrc
 composer.json
 composer.lock
 CONTRIBUTING.md
