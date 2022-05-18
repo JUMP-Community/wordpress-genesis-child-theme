@@ -1,0 +1,79 @@
+name: Deploy to WP Engine
+
+on:
+  push:
+    branches: 
+    - main
+    - staging
+    - develop
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '7.4'
+        coverage: none
+        tools: composer:v2
+
+    - name: Install Composer dependencies
+      run: composer install
+
+    - name: Lint Coding Standards
+      run: composer run lint
+
+    - name: Static Analysis
+      run: composer run test:static
+
+  deploy:
+    runs-on: ubuntu-latest  
+    needs: test
+
+    steps: 
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    # - name: Setup Node
+    #   uses: actions/setup-node@v2
+    #   with:
+    #     node-version: '14'
+
+    # - name: Install Node dependencies
+    #   run: npm install
+
+    # - name: Build Node assets
+    #   run: npm run build
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '7.4'
+        coverage: none
+        tools: composer:v2
+
+    - name: Install Composer dependencies
+      run: composer install --no-dev -o
+
+    - name: Deploy to WP Engine
+      uses: wpengine/github-action-wpe-site-deploy@v2.3.5
+      with: 
+        WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }} 
+        FLAGS: -azvr --inplace --delete --exclude=".*" --exclude-from=.deployignore
+        CACHE_CLEAR: TRUE
+        TPO_SRC_PATH: "."
+        TPO_PATH: "wp-content/themes/${{ github.event.repository.name }}/"
+        # Production
+        PRD_BRANCH: main
+        PRD_ENV: ${{ secrets.WPE_PRD_ENV }}
+        # Staging
+        STG_BRANCH: staging
+        STG_ENV: ${{ secrets.WPE_STG_ENV }}
+        # Develop
+        DEV_BRANCH: develop
+        DEV_ENV: ${{ secrets.WPE_DEV_ENV }}

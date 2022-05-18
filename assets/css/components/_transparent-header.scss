@@ -1,0 +1,19 @@
+//
+// Transparent header component.
+//
+
+.transparent-header {
+
+	.site-header {
+		position: absolute;
+		border-bottom: 1px solid transparent;
+		background-color: transparent;
+	}
+
+	.hero-section {
+
+		.wrap {
+			margin-top: $spacing--xxl;
+		}
+	}
+}

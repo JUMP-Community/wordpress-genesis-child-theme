@@ -1,0 +1,35 @@
+//
+// Skip Links.
+//
+
+.genesis-skip-link {
+	margin: 0;
+	padding: 0;
+
+	li {
+		width: 0;
+		height: 0;
+		list-style: none;
+	}
+
+	.screen-reader-shortcut,
+	.screen-reader-text,
+	.screen-reader-text span {
+
+		@extend .visually-hidden-focusable;
+
+		&:active,
+		&:focus {
+			position: absolute;
+			top: $spacing--s;
+			left: $spacing--s;
+			padding: $spacing--s $spacing--m;
+			color: $color--white;
+			background-color: $color--dark;
+			border: 0;
+			text-decoration: none;
+			z-index: 99999;
+		}
+	}
+
+}

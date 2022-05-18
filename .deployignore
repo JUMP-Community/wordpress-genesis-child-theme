@@ -1,0 +1,16 @@
+.git
+.github
+node_modules
+bin
+tests
+.deployignore
+.editorconfig
+.gitignore
+composer.json
+composer.lock
+package.json
+package-lock.json
+phpcs.xml
+phpstan.neon
+phpunit.xml.dist
+README.md
