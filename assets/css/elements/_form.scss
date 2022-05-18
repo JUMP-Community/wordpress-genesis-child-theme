@@ -3,8 +3,8 @@
 //
 
 ::placeholder {
-	opacity: 1; // Firefox fix
 	color: $color--muted;
+	opacity: 1; // Firefox fix
 }
 
 abbr[title] {
@@ -13,9 +13,9 @@ abbr[title] {
 
 label {
 	display: inline-block;
-	margin: 0 0 $spacing--s;
 	font-size: $base--font-size;
 	font-weight: $font-weight--semibold;
+	margin: 0 0 $spacing--s;
 
 	i + &,
 	input + &,
@@ -29,14 +29,14 @@ label {
 input,
 select,
 textarea {
-	width: 100%;
-	margin: 0 0 $spacing--s;
-	padding: 1em;
+	background-clip: padding-box; // Remove iOS box shadow
 	border: $base--border;
 	border-radius: $base--border--radius;
-	background-clip: padding-box; // Remove iOS box shadow
 	box-shadow: none;
 	font-size: $base--font-size;
+	margin: 0 0 $spacing--s;
+	padding: 1em;
+	width: 100%;
 
 	&:focus {
 		border-color: $color--primary;
@@ -45,8 +45,8 @@ textarea {
 
 	&:disabled,
 	&:disabled:hover {
-		border-color: $color--border;
 		background-color: $color--muted;
+		border-color: $color--border;
 		cursor: not-allowed;
 	}
 }
@@ -68,8 +68,8 @@ select[multiple] {
 input[type="checkbox"],
 input[type="image"],
 input[type="radio"] {
-	width: auto;
 	margin-right: $spacing--s;
+	width: auto;
 }
 
 input[type="color"] {
@@ -77,7 +77,7 @@ input[type="color"] {
 }
 
 input[type="search"] {
-	-webkit-appearance: none;
+	appearance: none;
 
 	&::-webkit-search-cancel-button,
 	&::-webkit-search-results-button {
@@ -86,10 +86,10 @@ input[type="search"] {
 }
 
 fieldset {
-	min-width: 0;
-	margin: 0;
-	padding: 0.01em 0 0 0;
 	border: 0;
+	margin: 0;
+	min-width: 0;
+	padding: 0.01em 0 0;
 
 	body:not(:-moz-handler-blocked) & {
 		display: table-cell;
@@ -99,10 +99,10 @@ fieldset {
 legend {
 	display: table;
 	float: left;
-	width: 100%;
+	font-size: $font-size--h5;
 	margin: 0 0 $spacing--s;
 	padding: 0;
-	font-size: $font-size--h5;
+	width: 100%;
 
 	@include heading;
 

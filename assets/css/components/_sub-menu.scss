@@ -4,17 +4,17 @@
 
 .sub-menu {
 	display: none;
+	list-style-type: none;
+	margin: 0 0 0 $spacing--s;
 	top: 100%;
 	width: 100%;
-	margin: 0 0 0 $spacing--s;
-	list-style-type: none;
 
 	@include mq(m) {
+		background-color: $color--white;
+		border: $base--border;
+		margin-left: -$spacing--m;
 		position: absolute;
 		width: $spacing--xxxl;
-		margin-left: -$spacing--m;
-		border: $base--border;
-		background-color: $color--white;
 	}
 
 	// Hovered state.
@@ -39,8 +39,8 @@
 		}
 
 		@include mq(m) {
-			width: auto;
 			padding: $spacing--s $spacing--m;
+			width: auto;
 		}
 
 		&-has-children {
@@ -52,21 +52,21 @@
 	& & {
 
 		@include mq(m) {
-			top: -1px;
 			left: 100%;
 			margin-left: 0;
+			top: -1px;
 			white-space: nowrap;
 		}
 	}
 
 	// Sub menu toggle.
 	&-toggle {
+		background-color: transparent;
 		display: flex;
 		justify-content: center;
+		line-height: 0;
 		margin: 0;
 		padding: 0;
-		background-color: transparent;
-		line-height: 0;
 
 		// @include size($spacing--l);
 
@@ -82,7 +82,7 @@
 			outline: $base--border;
 		}
 
-		&:before {
+		&::before {
 			content: "";
 
 			// @include triangle("down", 1rem, 0.5rem, $color--text);
@@ -90,8 +90,7 @@
 
 		&.activated {
 
-			&:before {
-
+			&::before {
 				// @include triangle("up", 1rem, 0.5rem, $color--text);
 			}
 		}

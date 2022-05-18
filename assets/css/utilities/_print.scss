@@ -5,11 +5,11 @@
 @media print {
 
 	*,
-	*:before,
-	*:after {
-		color: $color--dark !important;
+	*::before,
+	*::after {
 		background: transparent !important;
 		box-shadow: none !important;
+		color: $color--dark !important;
 		text-shadow: none !important;
 	}
 
@@ -18,17 +18,17 @@
 		text-decoration: underline;
 	}
 
-	a[href]:after {
+	a[href]::after {
 		content: " (" attr(href) ")";
 	}
 
-	abbr[title]:after {
+	abbr[title]::after {
 		content: " (" attr(title) ")";
 	}
 
-	a[href^="javascript:"]:after,
-	a[href^="#"]:after,
-	.site-title > a:after {
+	a[href^="javascript:"]::after,
+	a[href^="#"]::after,
+	.site-title > a::after {
 		content: "";
 	}
 
@@ -91,8 +91,8 @@
 	}
 
 	.title-area {
-		width: 100%;
 		text-align: center;
+		width: 100%;
 	}
 
 	.site-title > a {
@@ -102,9 +102,9 @@
 	}
 
 	.site-inner {
+		padding-top: 0;
 		position: relative;
 		top: -#{$spacing--xl};
-		padding-top: 0;
 	}
 
 	.author-box {

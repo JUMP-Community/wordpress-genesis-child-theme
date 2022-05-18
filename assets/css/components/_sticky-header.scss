@@ -10,8 +10,8 @@
 		@include transition;
 
 		&.sticky {
-			border-bottom: $base--border;
 			background-color: $color--white;
+			border-bottom: $base--border;
 		}
 	}
 

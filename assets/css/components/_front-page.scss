@@ -3,15 +3,15 @@
 //
 
 [src*="placeholder.com"] {
-	padding: $spacing--xxs;
 	border: $base--border;
 	border-radius: $base--border--radius;
+	padding: $spacing--xxs;
 }
 
 [class*="front-page-"] {
-	width: 100%;
-	padding: $spacing--xl 0 $spacing--xl;
 	border-bottom: $base--border;
+	padding: $spacing--xl 0 $spacing--xl;
+	width: 100%;
 
 	@include mq(m) {
 		padding: $spacing--xxl 0 $spacing--xxl;
@@ -33,7 +33,7 @@
 	}
 
 	&-5 {
-		padding: $spacing--xl 0 $spacing--xl;
 		background-color: $color--background;
+		padding: $spacing--xl 0 $spacing--xl;
 	}
 }

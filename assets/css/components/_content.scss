@@ -16,8 +16,8 @@
 	.sidebar-content & {
 
 		@include mq(m) {
-			width: $layout--width--content;
 			max-width: $layout--max-width--content;
+			width: $layout--width--content;
 		}
 	}
 
@@ -55,8 +55,8 @@
 	}
 
 	.front-page & {
-		width: 100%;
 		margin: 0 auto;
+		width: 100%;
 
 		@include mq(m) {
 			width: 100%;

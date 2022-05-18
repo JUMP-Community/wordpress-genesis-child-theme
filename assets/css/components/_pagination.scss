@@ -3,10 +3,10 @@
 //
 
 .pagination {
-	width: 100%;
-	padding: $gutter 0;
-	border-top: $base--border;
 	background-color: $color--background;
+	border-top: $base--border;
+	padding: $gutter 0;
+	width: 100%;
 
 	@include mq(m) {
 		margin-top: auto;
@@ -19,8 +19,8 @@
 	ul {
 		display: flex;
 		flex-wrap: wrap;
-		margin-bottom: 0;
 		list-style-type: none;
+		margin-bottom: 0;
 	}
 
 	li {

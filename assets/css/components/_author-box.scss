@@ -3,11 +3,11 @@
 //
 
 .author-box {
-	margin: $gutter 0;
-	padding: $gap;
+	background-color: $color--background;
 	border: $base--border;
 	border-radius: $base--border--radius;
-	background-color: $color--background;
+	margin: $gutter 0;
+	padding: $gap;
 
 	.is-archive & {
 		margin-top: 0;

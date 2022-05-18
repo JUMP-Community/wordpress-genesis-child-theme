@@ -22,24 +22,24 @@
 
 	&wide,
 	&full {
+		left: 50%;
 		overflow: hidden;
 		position: relative;
-		left: 50%;
 		width: 100vw;
 
 		.content-sidebar &,
 		.sidebar-content & {
 			left: auto;
-			width: 100%;
-			max-width: 100%;
 			margin-left: 0;
+			max-width: 100%;
 			transform: none;
+			width: 100%;
 		}
 
 		> img {
 			display: inline-block;
-			width: 100%;
 			margin: $spacing--m auto;
+			width: 100%;
 		}
 	}
 
@@ -49,7 +49,7 @@
 	}
 
 	&full {
-		max-width: none;
 		margin-left: -50vw;
+		max-width: none;
 	}
 }

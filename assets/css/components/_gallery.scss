@@ -8,8 +8,8 @@
 
 	// Gallery item.
 	&-item {
-		width: $one-half;
 		margin-bottom: $gutter;
+		width: $one-half;
 
 		.gallery-columns-1 & {
 			width: 100%;

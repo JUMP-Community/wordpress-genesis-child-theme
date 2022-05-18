@@ -3,13 +3,13 @@
 //
 
 .menu-toggle {
-	display: flex;
 	align-items: center;
+	background-color: transparent;
+	display: flex;
 	justify-content: center;
 	margin: 0;
-	padding: 0;
-	background-color: transparent;
 	order: 1;
+	padding: 0;
 
 	// @include size($spacing--m * 1rem);
 
@@ -26,27 +26,27 @@
 	}
 
 	.hamburger,
-	.hamburger:before,
-	.hamburger:after {
-		display: block;
-		position: absolute;
-		width: $spacing--m;
-		height: 3px;
+	.hamburger::before,
+	.hamburger::after {
 		background-color: $color--text;
 		content: "";
+		display: block;
+		height: 3px;
+		position: absolute;
+		width: $spacing--m;
 	}
 
 	.hamburger {
-		top: auto;
-		right: auto;
 		bottom: auto;
 		margin: auto;
+		right: auto;
+		top: auto;
 
-		&:before {
+		&::before {
 			top: -$spacing--s;
 		}
 
-		&:after {
+		&::after {
 			bottom: -$spacing--s;
 		}
 	}
@@ -56,12 +56,12 @@
 		.hamburger {
 			background-color: transparent;
 
-			&:before {
+			&::before {
 				top: 0;
 				transform: rotate(45deg);
 			}
 
-			&:after {
+			&::after {
 				bottom: 0;
 				transform: rotate(-45deg);
 			}
