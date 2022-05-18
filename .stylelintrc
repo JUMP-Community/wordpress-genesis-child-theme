@@ -1,5 +1,11 @@
 {
 	"extends": [
 		"@wordpress/stylelint-config/scss"
-	]
+	],
+	"rules": {
+		"scss/comment-no-empty": null,
+		"scss/no-global-function-names": null,
+		"block-no-empty": null,
+		"max-line-length": null
+	}
 }

@@ -27,9 +27,7 @@
 
 		@if type-of($from) == number {
 			$min-width: $from;
-		}
-
-		@else {
+		} @else {
 			$min-width: mq-get-breakpoint-width($from, $breakpoints);
 		}
 	}
@@ -39,9 +37,7 @@
 
 		@if type-of($until) == number {
 			$max-width: $until;
-		}
-
-		@else {
+		} @else {
 			$max-width: mq-get-breakpoint-width($until, $breakpoints);
 		}
 	}
@@ -319,9 +315,7 @@
 			@if nth($values, 1) {
 				#{$right}: nth($values, 1);
 			}
-		}
-
-		@else {
+		} @else {
 
 			@if nth($values, 2) {
 				#{$right}: nth($values, 2);
@@ -333,9 +327,7 @@
 			@if nth($values, 2) {
 				#{$left}: nth($values, 2);
 			}
-		}
-
-		@else if length($values) == 3 {
+		} @else if length($values) == 3 {
 
 			@if nth($values, 3) {
 				#{$bottom}: nth($values, 3);
@@ -344,9 +336,7 @@
 			@if nth($values, 2) {
 				#{$left}: nth($values, 2);
 			}
-		}
-
-		@else if length($values) == 4 {
+		} @else if length($values) == 4 {
 
 			@if nth($values, 3) {
 				#{$bottom}: nth($values, 3);
@@ -356,9 +346,7 @@
 				#{$left}: nth($values, 4);
 			}
 		}
-	}
-
-	@else {
+	} @else {
 		#{$all}: $values;
 	}
 }
@@ -379,9 +367,7 @@
 
 		@error "`#{$toggle}` is not a valid value for the `$toggle` argument in " +
 			"the `hide-visually` mixin. Must be either `hide` or `unhide`.";
-	}
-
-	@else if $toggle == "hide" {
+	} @else if $toggle == "hide" {
 		border: 0;
 		clip: rect(1px, 1px, 1px, 1px);
 		clip-path: inset(100%);
@@ -391,9 +377,7 @@
 		position: absolute;
 		white-space: nowrap;
 		width: 1px;
-	}
-
-	@else if $toggle == "unhide" {
+	} @else if $toggle == "unhide" {
 		clip: auto;
 		clip-path: none;
 		height: auto;
@@ -411,9 +395,7 @@
 
 	@if _is-size($height) {
 		height: $height;
-	}
-
-	@else {
+	} @else {
 
 		@error "`#{$height}` is not a valid length for the `$height` argument " +
 			"in the `size` mixin.";
@@ -421,9 +403,7 @@
 
 	@if _is-size($width) {
 		width: $width;
-	}
-
-	@else {
+	} @else {
 
 		@error "`#{$width}` is not a valid length for the `$width` argument " +
 			"in the `size` mixin.";
