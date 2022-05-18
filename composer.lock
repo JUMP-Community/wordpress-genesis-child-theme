@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4a22f1a88548a081f2c8236df9d148df",
+    "content-hash": "9d8a7b8b1ed527398e35625edbbe430e",
     "packages": [
         {
             "name": "johnbillion/args",
@@ -147,6 +147,47 @@
                 }
             ],
             "time": "2022-01-20T22:14:29+00:00"
+        },
+        {
+            "name": "mindkomm/theme-lib-mix",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mindkomm/theme-lib-mix.git",
+                "reference": "7380b765c766584419dfa99234887a52d664d491"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mindkomm/theme-lib-mix/zipball/7380b765c766584419dfa99234887a52d664d491",
+                "reference": "7380b765c766584419dfa99234887a52d664d491",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "mix.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lukas Gaechter",
+                    "email": "lukas.gaechter@mind.ch",
+                    "homepage": "https://www.mind.ch"
+                }
+            ],
+            "description": "Laravel Mix functions for WordPress projects",
+            "support": {
+                "issues": "https://github.com/mindkomm/theme-lib-mix/issues",
+                "source": "https://github.com/mindkomm/theme-lib-mix/tree/1.2.0"
+            },
+            "time": "2022-04-04T11:54:19+00:00"
         }
     ],
     "packages-dev": [

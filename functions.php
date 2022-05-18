@@ -49,7 +49,7 @@ Markup::instance()->setup();
 Setup::instance()->setup();
 
 // Post Types.
-PostType\Resources::instance()->setup();
+PostType\Resource::instance()->setup();
 
 // Taxonomies.
 Taxonomy\Skills::instance()->setup();

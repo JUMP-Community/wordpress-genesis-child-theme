@@ -41,7 +41,7 @@ mix.version();
 mix.js('assets/js/frontend/frontend.js', 'dist/js');
 
 // CSS
-mix.sass('assets/css/frontend.scss', 'dist/css', {
+mix.sass('assets/css/frontend-style.scss', 'dist/css', {
 	sassOptions: {
 		outputStyle: 'compressed',
 		indentType: 'tab',
