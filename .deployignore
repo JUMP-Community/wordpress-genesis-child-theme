@@ -13,6 +13,8 @@ node_modules
 .stylelint
 composer.json
 composer.lock
+CONTRIBUTING.md
+LICENSE
 package.json
 package-lock.json
 phpcs.xml
