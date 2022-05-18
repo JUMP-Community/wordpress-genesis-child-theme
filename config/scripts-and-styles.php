@@ -12,7 +12,7 @@ return [
 		[
 			'type'    => 'script',
 			'handle'  => 'shared',
-			'src'     => FORKLIFT_DIST_URI . '/js/shared.js',
+			'src'     => JUMP_DIST_URI . '/js/shared.js',
 			'deps'    => [],
 			'version' => '',
 			'editor'  => true,
@@ -20,7 +20,7 @@ return [
 		[
 			'type'    => 'script',
 			'handle'  => 'admin',
-			'src'     => FORKLIFT_DIST_URI . '/js/admin.js',
+			'src'     => JUMP_DIST_URI . '/js/admin.js',
 			'deps'    => [],
 			'version' => '',
 			'editor'  => true,
@@ -28,14 +28,14 @@ return [
 		[
 			'type'    => 'script',
 			'handle'  => 'frontend',
-			'src'     => FORKLIFT_DIST_URI . '/js/frontend.js',
+			'src'     => JUMP_DIST_URI . '/js/frontend.js',
 			'deps'    => [],
 			'version' => '',
 		],
 		[
 			'type'    => 'style',
 			'handle'  => 'shared-style',
-			'src'     => FORKLIFT_DIST_URI . '/css/shared-style.css',
+			'src'     => JUMP_DIST_URI . '/css/shared-style.css',
 			'deps'    => [],
 			'version' => '',
 			'editor'  => true,
@@ -43,14 +43,14 @@ return [
 		[
 			'type'    => 'style',
 			'handle'  => 'admin-style',
-			'src'     => FORKLIFT_DIST_URI . '/css/admin-style.css',
+			'src'     => JUMP_DIST_URI . '/css/admin-style.css',
 			'deps'    => [],
 			'version' => '',
 		],
 		[
 			'type'    => 'style',
 			'handle'  => 'editor-style',
-			'src'     => FORKLIFT_DIST_URI . '/css/editor-style.css',
+			'src'     => JUMP_DIST_URI . '/css/editor-style.css',
 			'deps'    => [],
 			'version' => '',
 			'editor'  => true,
@@ -65,7 +65,7 @@ return [
 		[
 			'type'    => 'style',
 			'handle'  => 'frontend-style',
-			'src'     => FORKLIFT_DIST_URI . '/css/frontend-style.css',
+			'src'     => JUMP_DIST_URI . '/css/frontend-style.css',
 			'deps'    => [],
 			'version' => '',
 		],

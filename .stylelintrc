@@ -1,15 +1,5 @@
 {
 	"extends": [
-		"stylelint-config-standard-scss",
-		"@10up/stylelint-config"
-	],
-	"rules": {
-		"at-rule-no-unknown": null,
-		"function-calc-no-invalid": false,
-		"scale-unlimited/declaration-strict-value": null,
-		"selector-class-pattern": null,
-		"selector-nested-pattern": null,
-		"scss/at-import-no-partial-leading-underscore": null,
-		"scss/comment-no-empty": null
-	}
+		"@wordpress/stylelint-config/scss"
+	]
 }
