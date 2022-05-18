@@ -32,10 +32,11 @@
 		"start": "10up-toolkit build --watch",
 		"build": "10up-toolkit build",
 		"format-js": "10up-toolkit format-js",
-		"format-style": "stylelint path/to/css/file.css --fix",
+		"format-style": "stylelint assets/css/* --fix",
 		"lint-js": "10up-toolkit lint-js",
 		"lint-style": "10up-toolkit lint-style",
-		"test": "10up-toolkit test-unit-jest"
+		"test": "10up-toolkit test-unit-jest",
+		"clean": "rm -rf package-lock.json && rm -rf node_modules && npm install"
 	},
 	"10up-toolkit": {
 		"devURL": "https://jump.local",

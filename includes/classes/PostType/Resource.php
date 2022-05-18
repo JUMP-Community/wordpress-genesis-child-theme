@@ -1,6 +1,6 @@
 <?php
 /**
- * Post Type: Service
+ * Post Type: Resource
  *
  * @package JUMP
  */
@@ -12,7 +12,7 @@ use JUMP\Singleton;
 /**
  * Registers the post type.
  */
-final class Services extends PostType {
+final class Resource extends PostType {
 	use Singleton;
 
 	/**
@@ -20,21 +20,21 @@ final class Services extends PostType {
 	 *
 	 * @var string
 	 */
-	protected $slug = 'service';
+	protected $slug = 'resource';
 
 	/**
 	 * CPT singular name.
 	 *
 	 * @var string
 	 */
-	protected $single_name = 'Service';
+	protected $single_name = 'Resource';
 
 	/**
 	 * CPT plural name.
 	 *
 	 * @var string
 	 */
-	protected $plural_name = 'Services';
+	protected $plural_name = 'Resources';
 
 	/**
 	 * CPT custom arguments.

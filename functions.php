@@ -49,7 +49,7 @@ Markup::instance()->setup();
 Setup::instance()->setup();
 
 // Post Types.
-PostType\Services::instance()->setup();
+PostType\Resources::instance()->setup();
 
 // Taxonomies.
 Taxonomy\Skills::instance()->setup();
@@ -66,7 +66,6 @@ WordPress\WpHead::instance()->setup();
 WordPress\XmlRpc::instance()->setup();
 
 // Plugins.
-Plugins\AdvancedCustomFieldsPro::instance()->setup();
 Plugins\ManageWP::instance()->setup();
 Plugins\WordPressSeo::instance()->setup();
 Plugins\WpMailSmtp::instance()->setup();
