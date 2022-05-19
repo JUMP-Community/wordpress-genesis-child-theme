@@ -48,12 +48,6 @@ Genesis::instance()->setup();
 Markup::instance()->setup();
 Setup::instance()->setup();
 
-// Post Types.
-PostType\Resource::instance()->setup();
-
-// Taxonomies.
-Taxonomy\Skills::instance()->setup();
-
 // WordPress.
 WordPress\API::instance()->setup();
 WordPress\Authors::instance()->setup();
