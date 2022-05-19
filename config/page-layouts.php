@@ -18,6 +18,8 @@ return [
 		],
 	],
 	'remove' => [
+		'content-sidebar',
+		'sidebar-content',
 		'content-sidebar-sidebar',
 		'sidebar-sidebar-content',
 		'sidebar-content-sidebar',

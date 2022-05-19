@@ -3,13 +3,14 @@
 //
 
 .widget {
+	font-size: $font-size--h4;
 	margin-bottom: $gutter;
+	text-align: center;
 
-	// Widget wrapper.
-	&-wrap {}
-
-	// Widget title.
 	&-title {
-		font-size: $font-size--h5;
+		color: $color--pink;
+		font-family: $font-family--heading;
+		font-size: $font-size--h1;
+		margin-bottom: $spacing--s;
 	}
 }

@@ -8,7 +8,7 @@
 	padding: $gutter 0;
 	width: 100%;
 
-	@include mq(m) {
+	@include media-breakpoint-up(md) {
 		margin-top: auto;
 	}
 
@@ -47,7 +47,7 @@
 
 		.wrap {
 
-			@include mq(m) {
+			@include media-breakpoint-up(md) {
 				width: $layout--width--content;
 			}
 		}

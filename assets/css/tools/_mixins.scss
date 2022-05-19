@@ -3,70 +3,6 @@
 //
 
 //
-// Media Query mixin
-//
-// @param {String | Boolean} $from (false) - One of $mq-breakpoints
-// @param {String | Boolean} $until (false) - One of $mq-breakpoints
-// @param {String | Boolean} $and (false) - Additional media query parameters
-// @param {String} $media-type ($mq-media-type) - Media type: screen, print…
-// @param {String} $breakpoints ($mq-breakpoints) - Breakpoints map
-//
-@mixin mq(
-	$from: false,
-	$until: false,
-	$and: false,
-	$media-type: $mq-media-type,
-	$breakpoints: $mq-breakpoints
-) {
-	$min-width: 0;
-	$max-width: 0;
-	$media-query: "";
-
-	// From: this breakpoint (inclusive)
-	@if $from {
-
-		@if type-of($from) == number {
-			$min-width: $from;
-		} @else {
-			$min-width: mq-get-breakpoint-width($from, $breakpoints);
-		}
-	}
-
-	// Until: that breakpoint (exclusive)
-	@if $until {
-
-		@if type-of($until) == number {
-			$max-width: $until;
-		} @else {
-			$max-width: mq-get-breakpoint-width($until, $breakpoints);
-		}
-	}
-
-	@if $min-width != 0 {
-		$media-query: "#{$media-query} and (min-width: #{$min-width})";
-	}
-
-	@if $max-width != 0 {
-		$media-query: "#{$media-query} and (max-width: #{$max-width})";
-	}
-
-	@if $and {
-		$media-query: "#{$media-query} and #{$and}";
-	}
-
-	// Remove unnecessary media query prefix 'all and '
-	@if $media-type == "all" and $media-query != "" {
-		$media-type: "";
-		$media-query: $media-query), 6;
-	}
-
-	@media #{$media-type + $media-query} {
-
-		@content;
-	}
-}
-
-//
 // Hover focus mixin
 //
 // @group  Tools
@@ -212,26 +148,30 @@
 //
 
 @mixin button {
-	background-color: $color--primary;
-	border: 0;
-	border-radius: $base--border--radius;
+	background-color: $color--pink;
+	border: 3px solid $color--black;
+	border-radius: 50px;
+	box-shadow: 0 15px 0 -6px #000;
 	color: $color--white;
 	cursor: pointer;
 	display: inline-block;
-	font-size: $base--font-size / 1rem;
+	font-size: $font-size--large;
 	font-weight: $font-weight--heading;
 	line-height: 1;
-	padding: $spacing--m $gutter;
+    margin: 0 0 8px !important;
+	letter-spacing: 1px;
+	padding: $spacing--m $spacing--l;
 	text-align: center;
 	text-decoration: none;
+	text-transform: uppercase;
 	white-space: normal;
 	width: auto;
 
 	@include transition;
 
 	@include hover-focus {
-		background-color: lighten($color--primary, 10);
-		color: $color--white;
+		box-shadow: 0 8px 0 -6px #000;
+		margin: 8px 0 0 !important;
 		outline: none;
 		text-decoration: none;
 	}
@@ -247,52 +187,6 @@
 		}
 	}
 
-	&.small {
-		font-size: small;
-		padding: 1em 1.5em;
-	}
-
-	&.rounded {
-		border-radius: 10rem;
-	}
-
-	&.outline {
-		background: transparent;
-		border: 1px solid $color--primary;
-		color: $color--primary;
-
-		@include hover-focus {
-			background: $color--primary;
-			color: $color--white;
-		}
-	}
-
-	&.fa,
-	&.fab,
-	&.fas {
-		display: inline-flex;
-		font-family: $base--font-family;
-		font-weight: $font-weight--heading;
-
-		&::before {
-			display: inline-block;
-			font-family: "Font Awesome 5 Pro", sans-serif;
-			font-style: normal;
-			font-variant: normal;
-			line-height: 1;
-			margin-right: $spacing--s;
-			text-rendering: auto;
-		}
-	}
-
-	&.icon-right {
-
-		&::before {
-			margin-left: $spacing--s;
-			margin-right: 0;
-			order: 1;
-		}
-	}
 }
 
 @mixin _directional-property(

@@ -2,8 +2,6 @@
 /**
  * Template Name: Landing
  *
- * Template Post Type: post, page, product, portfolio
- *
  * @package JUMP
  */
 

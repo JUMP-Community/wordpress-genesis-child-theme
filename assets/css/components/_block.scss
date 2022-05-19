@@ -49,19 +49,19 @@
 	// Columns block.
 	&-columns {
 
-		@include mq($until: m) {
+		@include media-breakpoint-up(md) {
 			flex-wrap: wrap;
 		}
 	}
 
 	&-column {
 
-		@include mq($until: m) {
+		@include media-breakpoint-up(md) {
 			flex: none;
 			width: 100%;
 		}
 
-		@include mq(m) {
+		@include media-breakpoint-up(md) {
 			margin-left: $gutter;
 
 			&:first-of-type {

@@ -13,7 +13,7 @@
 	padding: $spacing--xl 0 $spacing--xl;
 	width: 100%;
 
-	@include mq(m) {
+	@include media-breakpoint-up(md) {
 		padding: $spacing--xxl 0 $spacing--xxl;
 	}
 
@@ -27,7 +27,7 @@
 	&-1 {
 		padding: $spacing--xxl 0 $spacing--xxl;
 
-		@include mq(m) {
+		@include media-breakpoint-up(md) {
 			padding: $spacing--xxxl 0 $spacing--xxxl;
 		}
 	}

@@ -9,9 +9,8 @@ namespace JUMP;
 
 return [
 	'add'    => [
-		// 'align-wide',
+		'align-wide',
 		'automatic-feed-links',
-		// 'editor-styles',
 		'genesis-accessibility'    => [
 			'404-page',
 			// 'drop-down-menu',
@@ -30,22 +29,21 @@ return [
 		// '.site-description',
 		// ],
 		// ],
-		// 'genesis-footer-widgets'   => 0,
+		'genesis-footer-widgets'   => 1,
 		'genesis-menus'            => [
-			'primary'      => __( 'Header Menu', 'jump' ),
-			'footer-one'   => __( 'Footer One', 'jump' ),
-			'footer-two'   => __( 'Footer Two', 'jump' ),
-			'footer-three' => __( 'Footer Three', 'jump' ),
-			'footer-four'  => __( 'Footer Four', 'jump' ),
+			'primary'        => __( 'Main Menu', 'jump' ),
+			'footer'         => __( 'Footer Menu', 'jump' ),
+			'command-center' => __( 'Command Center Menu', 'jump' ),
 		],
 		'genesis-structural-wraps' => [
 			'header',
-			'footer',
 			'site-inner',
+			'footer-widgets',
+			'footer',
 		],
-		// 'gutenberg'                => [
-		// 'wide-images' => true,
-		// ],
+		'gutenberg'                => [
+			'wide-images' => true,
+		],
 		// 'hero-section',
 		'html5'                    => [
 			'caption',

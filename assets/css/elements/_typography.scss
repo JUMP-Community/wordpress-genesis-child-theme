@@ -12,9 +12,9 @@ body {
 	line-height: $base--line-height;
 	margin: 0;
 
-	// @include mq(m) {
-	// 	font-size: $base--font-size * strip-unit(map_get($font-sizes, h6));
-	// }
+	@include media-breakpoint-up(md) {
+		font-size: $font-size--large;
+	}
 }
 
 a {

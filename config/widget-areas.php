@@ -12,5 +12,7 @@ return [
 	'remove' => [
 		'sidebar-alt',
 		'header-right',
+		'sidebar',
+		'sidebar-alt',
 	],
 ];

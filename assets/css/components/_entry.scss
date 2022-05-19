@@ -13,7 +13,7 @@
 
 		&:last-of-type {
 
-			@include mq($until: xs) {
+			@include media-breakpoint-up(sm) {
 				margin-bottom: 0;
 			}
 		}

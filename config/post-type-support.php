@@ -8,12 +8,9 @@
 namespace JUMP;
 
 return [
-	'add'    => [
-		'hero-section' => [ 'page', 'post' ],
-	],
+	'add'    => [],
 	'remove' => [
 		'excerpt'                       => [ 'post', 'page' ],
-		'genesis-layouts'               => [ 'post', 'page' ],
 		'genesis-seo'                   => [ 'post', 'page' ],
 		'genesis-breadcrumbs-toggle'    => [ 'post', 'page' ],
 		'genesis-footer-widgets-toggle' => [ 'post', 'page' ],

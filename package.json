@@ -30,8 +30,10 @@
 		"@wordpress/scripts": "^23.1.0",
 		"bootstrap": "^5.1.3",
 		"eslint": "^8.15.0",
+		"headroom.js": "^0.12.0",
 		"laravel-mix": "^6.0.43",
 		"laravel-mix-simple-image-processing": "^1.0.7",
+		"resolve-url-loader": "^5.0.0",
 		"stylelint": "^14.7.1"
 	},
 	"scripts": {

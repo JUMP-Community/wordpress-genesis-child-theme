@@ -2,8 +2,6 @@
 /**
  * Template Name: Blocks
  *
- * Template Post Type: post, page, product, portfolio
- *
  * @package JUMP
  */
 

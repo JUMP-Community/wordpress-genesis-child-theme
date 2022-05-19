@@ -7,7 +7,7 @@
 
 	@include padding($spacing--m null);
 
-	@include mq(m) {
+	@include media-breakpoint-up(md) {
 
 		@include padding($gap null);
 	}

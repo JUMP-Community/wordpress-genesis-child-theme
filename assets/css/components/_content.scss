@@ -7,7 +7,7 @@
 
 	@include margin($spacing--l null);
 
-	@include mq(m) {
+	@include media-breakpoint-up(md) {
 
 		@include margin($spacing--xl null);
 	}
@@ -15,7 +15,7 @@
 	.content-sidebar &,
 	.sidebar-content & {
 
-		@include mq(m) {
+		@include media-breakpoint-up(md) {
 			max-width: $layout--max-width--content;
 			width: $layout--width--content;
 		}
@@ -23,14 +23,14 @@
 
 	.narrow-content & {
 
-		@include mq(m) {
+		@include media-breakpoint-up(md) {
 			width: $layout--width--content;
 		}
 	}
 
 	.sidebar-content & {
 
-		@include mq(m) {
+		@include media-breakpoint-up(md) {
 			order: 1;
 		}
 	}
@@ -58,7 +58,7 @@
 		margin: 0 auto;
 		width: 100%;
 
-		@include mq(m) {
+		@include media-breakpoint-up(md) {
 			width: 100%;
 		}
 	}

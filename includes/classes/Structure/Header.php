@@ -41,7 +41,7 @@ class Header {
 	 * @return array
 	 */
 	public function attributes( array $attributes ) : array {
-		$attributes['class'] .= ' navbar navbar-expand-lg navbar-light bg-light border-bottom py-4 mb-5';
+		$attributes['class'] .= ' navbar navbar-expand-lg navbar-light bg-transparent py-4 mb-5';
 		return $attributes;
 	}
 
