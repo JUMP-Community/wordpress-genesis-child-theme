@@ -13,22 +13,21 @@ return [
 		'automatic-feed-links',
 		'genesis-accessibility'    => [
 			'404-page',
-			// 'drop-down-menu',
 			'headings',
 			'rems',
 			'search-form',
 			'skip-links',
 		],
-		// 'genesis-custom-logo'      => [
-		// 'height'      => 60,
-		// 'width'       => 120,
-		// 'flex-height' => true,
-		// 'flex-width'  => true,
-		// 'header-text' => [
-		// '.site-title',
-		// '.site-description',
-		// ],
-		// ],
+		'genesis-custom-logo'      => [
+			'height'      => 60,
+			'width'       => 120,
+			'flex-height' => true,
+			'flex-width'  => true,
+			'header-text' => [
+				'.site-title',
+				'.site-description',
+			],
+		],
 		'genesis-footer-widgets'   => 1,
 		'genesis-menus'            => [
 			'primary'        => __( 'Main Menu', 'jump' ),
@@ -44,7 +43,6 @@ return [
 		'gutenberg'                => [
 			'wide-images' => true,
 		],
-		// 'hero-section',
 		'html5'                    => [
 			'caption',
 			'comment-form',
@@ -54,10 +52,6 @@ return [
 		],
 		'post-thumbnails',
 		'responsive-embeds',
-		// phpcs:ignore Squiz.PHP.CommentedOutCode.Found
-		// 'sticky-header',
-		// phpcs:ignore Squiz.PHP.CommentedOutCode.Found
-		// 'transparent-header',
 		'wp-block-styles',
 	],
 	'remove' => [],
