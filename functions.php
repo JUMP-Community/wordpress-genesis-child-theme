@@ -69,7 +69,6 @@ Structure\Archive::instance()->setup();
 Structure\Footer::instance()->setup();
 Structure\FooterWidgets::instance()->setup();
 Structure\Header::instance()->setup();
-Structure\Hero::instance()->setup();
 Structure\Pagination::instance()->setup();
 Structure\Single::instance()->setup();
 Structure\SiteContainer::instance()->setup();
