@@ -1,0 +1,15 @@
+//
+// Gutenberg block: CoBlocks Accordion
+//
+
+.wp-block-coblocks-accordion {
+	
+	&-item {
+		@extend .accordion-item;
+
+		&__content {
+			@extend .accordion-body;
+		}
+	}
+
+}

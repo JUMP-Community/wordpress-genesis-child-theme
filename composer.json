@@ -19,17 +19,8 @@
 			"JUMP\\": "includes/classes"
 		}
 	},
-	"autoload-dev": {
-		"psr-4": {
-			"JUMP\\Tests\\Unit\\": "tests/php/unit/",
-			"JUMP\\Tests\\Integration\\": "tests/php/integration/"
-		}
-	},
 	"require-dev": {
-		"php": "^7",
-		"brain/monkey": "^2.6",
-		"phpunit/phpunit": "^9.5.0",
-		"wp-phpunit/wp-phpunit": "^5.9",
+		"php": "^7.4|^8.0",
 		"dealerdirect/phpcodesniffer-composer-installer": "*",
 		"phpcompatibility/phpcompatibility-wp": "*",
 		"squizlabs/php_codesniffer": "*",
@@ -46,8 +37,6 @@
 	"scripts": {
 		"lint": "vendor/bin/phpcs --standard=phpcs.xml",
 		"lint-fix": "vendor/bin/phpcbf  --standard=phpcs.xml",
-		"test:unit": "composer dump && \"./vendor/bin/phpunit\" --testsuite unit --color=always",
-		"test:integration": "composer dump && \"./vendor/bin/phpunit\" --testsuite integration --configuration tests/phpunit/integration/phpunit.xml.dist --color=always",
 		"test:static": "vendor/bin/phpstan analyze --memory-limit=1024M",
 		"install-coding-standards": "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run",
 		"post-install-cmd": "@install-coding-standards",

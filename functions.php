@@ -43,10 +43,13 @@ require_once JUMP_CONFIG_PATH . '/scripts-and-styles.php';
 require_once JUMP_CONFIG_PATH . '/theme-support.php';
 
 // General.
+Blocks::instance()->setup();
 Enqueue::instance()->setup();
 Genesis::instance()->setup();
-Markup::instance()->setup();
 Setup::instance()->setup();
+
+// Taxonomy.
+Taxonomy\Brief::instance()->setup();
 
 // WordPress.
 WordPress\API::instance()->setup();
@@ -66,11 +69,11 @@ Plugins\WpMailSmtp::instance()->setup();
 
 // Structure.
 Structure\Archive::instance()->setup();
-Structure\Footer::instance()->setup();
 Structure\FooterWidgets::instance()->setup();
 Structure\Header::instance()->setup();
+Structure\Layout::instance()->setup();
 Structure\Pagination::instance()->setup();
 Structure\Single::instance()->setup();
 Structure\SiteContainer::instance()->setup();
+Structure\SiteFooter::instance()->setup();
 Structure\SiteInner::instance()->setup();
-Structure\Wrap::instance()->setup();

@@ -22,26 +22,28 @@ class Header {
 	 * @return void
 	 */
 	public function setup() {
-		add_filter( 'genesis_attr_site-header', [ $this, 'attributes' ], 10, 1 );
+		add_filter( 'genesis_attr_site-header', [ $this, 'container' ] );
 		add_filter( 'genesis_structural_wrap-header', [ $this, 'wrapper' ], 10, 2 );
-		add_filter( 'genesis_attr_title-area', [ $this, 'title_area' ], 10, 1 );
-		add_filter( 'genesis_attr_nav-primary', [ $this, 'nav_primary' ], 10, 1 );
-		add_filter( 'genesis_header', [ $this, 'menu_toggle' ], 11 );
+		add_filter( 'genesis_attr_title-area', [ $this, 'title_area' ] );
+		add_filter( 'genesis_attr_header-widget-area', [ $this, 'header_right' ] );
+		add_filter( 'genesis_header', [ $this, 'menu_toggle' ] );
 		add_filter( 'wp_nav_menu_args', [ $this, 'navigation' ], 10, 2 );
-		// Reposition primary nav.
+		// Reposition primary and secondary navigation.
 		remove_action( 'genesis_after_header', 'genesis_do_nav' );
-		add_action( 'genesis_header', 'genesis_do_nav', 12 );
+		remove_action( 'genesis_after_header', 'genesis_do_subnav' );
+		add_action( 'genesis_header_right', 'genesis_do_nav' );
+		add_action( 'genesis_header_right', 'genesis_do_subnav' );
 	}
 
 	/**
-	 * Genesis attributes
+	 * Site header container
 	 *
 	 * @param array $attributes Default attributes.
 	 *
 	 * @return array
 	 */
-	public function attributes( array $attributes ) : array {
-		$attributes['class'] .= ' navbar navbar-expand-lg navbar-light bg-transparent py-4 mb-5';
+	public function container( array $attributes ) : array {
+		$attributes['class'] .= ' navbar navbar-expand-lg navbar-light bg-transparent py0 mb-5';
 		return $attributes;
 	}
 
@@ -54,12 +56,8 @@ class Header {
 	 * @return string
 	 */
 	public function wrapper( string $output, string $original_output ) : string {
-		if ( 'open' === $original_output ) {
-			$output = '<div class="container-xxl flex-wrap flex-md-nowrap">';
-		}
-		if ( 'close' === $original_output ) {
-			$output = '</div>';
-		}
+		$output = 'open' === $original_output ? '<div class="container-xl">' : $output;
+		$output = 'close' === $original_output ? '</div>' : $output;
 		return $output;
 	}
 
@@ -82,8 +80,8 @@ class Header {
 	 *
 	 * @return array
 	 */
-	public function nav_primary( array $attributes ) : array {
-		$attributes['class'] .= ' justify-content-md-end collapse navbar-collapse';
+	public function header_right( array $attributes ) : array {
+		$attributes['class'] = 'd-md-flex justify-content-md-between collapse navbar-collapse';
 		return $attributes;
 	}
 

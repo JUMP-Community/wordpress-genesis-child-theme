@@ -1,0 +1,11 @@
+//
+// Gutenberg block: Button
+//
+
+.wp-block-button {
+	margin-bottom: $spacing--m;
+
+	&__link {
+		@include button;
+	}
+}

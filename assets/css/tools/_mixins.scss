@@ -6,10 +6,7 @@
 // Hover focus mixin
 //
 // @group  Tools
-
-// @link   https://github.com/seothemes/genesis-starter-theme
 //
-
 @mixin hover-focus {
 
 	&:hover,
@@ -21,120 +18,12 @@
 }
 
 //
-// Border mixin
-//
-// @group  Tools
-
-// @link   https://github.com/seothemes/genesis-starter-theme
-//
-
-@mixin border( $values ) {
-
-	@include _directional-property(border, null, $values);
-}
-
-//
-// Overlay mixin
-//
-// @group  Tools
-
-// @link   https://github.com/seothemes/genesis-starter-theme
-//
-
-@mixin overlay {
-	overflow: hidden;
-	position: relative;
-
-	&::before {
-		background-color: $color--overlay;
-		content: "";
-		display: block;
-
-		// @include position(absolute, 0 0 0 0);
-	}
-}
-
-//
 // Transition mixin
 //
 // @group  Tools
-
-// @link   https://github.com/seothemes/genesis-starter-theme
 //
-
 @mixin transition {
-	transition: all $base--transition-duration $base--transition-timing-function;
-}
-
-//
-// Heading mixin
-//
-// @group  Tools
-
-// @link   https://github.com/seothemes/genesis-starter-theme
-//
-
-@mixin heading {
-	font-family: $font-family--heading;
-	font-weight: $font-weight--heading;
-	line-height: $line-height--heading;
-	margin: 0 0 0.5em;
-}
-
-//
-// Well mixin
-//
-// @group  Tools
-
-// @link   https://github.com/seothemes/genesis-starter-theme
-//
-
-@mixin box {
-	background-color: $color--background;
-	border: $base--border;
-	border-radius: $base--border--radius;
-	padding: $gap;
-
-	p {
-
-		&:last-of-type {
-			margin-bottom: 0;
-		}
-	}
-}
-
-//
-// Notice mixin
-//
-// @group  Tools
-
-// @link   https://github.com/seothemes/genesis-starter-theme
-//
-
-@mixin notice($color: "medium") {
-	margin-bottom: $spacing--m;
-
-	@include box;
-
-	@if $color != "medium" {
-		border-color: map_get($colors, $color);
-		color: map_get($colors, $color);
-		background-color: rgba(map_get($colors, $color), 0.1);
-	}
-}
-
-//
-// Icon mixin
-//
-// @group  Tools
-
-// @link   https://github.com/seothemes/genesis-starter-theme
-//
-
-@mixin icon($glyph: "\f005", $font_weight: 400) {
-	content: $glyph;
-	font-family: "Font Awesome 5 Free", sans-serif;
-	font-weight: $font_weight;
+	transition: $transition-base;
 }
 
 //
@@ -143,20 +32,17 @@
 // Used for both front end and block editor styling.
 //
 // @group  Tools
-
-// @link   https://github.com/seothemes/genesis-starter-theme
 //
-
 @mixin button {
-	background-color: $color--pink;
-	border: 3px solid $color--black;
+	background-color: $pink;
+	border: 3px solid $black;
 	border-radius: 50px;
 	box-shadow: 0 15px 0 -6px #000;
-	color: $color--white;
+	color: $white;
 	cursor: pointer;
 	display: inline-block;
-	font-size: $font-size--large;
-	font-weight: $font-weight--heading;
+	font-size: $font-size-lg;
+	font-weight: $font-weight-bold;
 	line-height: 1;
     margin: 0 0 8px !important;
 	letter-spacing: 1px;
@@ -181,7 +67,7 @@
 		&,
 		&:hover,
 		&:focus {
-			background-color: $color--muted;
+			background-color: $gray-400;
 			cursor: not-allowed;
 			opacity: 0.5;
 		}
@@ -253,84 +139,4 @@
 @mixin padding($values) {
 
 	@include _directional-property(padding, null, $values);
-}
-
-@mixin hide-visually($toggle: "hide") {
-
-	@if not index("hide" "unhide", $toggle) {
-
-		@error "`#{$toggle}` is not a valid value for the `$toggle` argument in " +
-			"the `hide-visually` mixin. Must be either `hide` or `unhide`.";
-	} @else if $toggle == "hide" {
-		border: 0;
-		clip: rect(1px, 1px, 1px, 1px);
-		clip-path: inset(100%);
-		height: 1px;
-		overflow: hidden;
-		padding: 0;
-		position: absolute;
-		white-space: nowrap;
-		width: 1px;
-	} @else if $toggle == "unhide" {
-		clip: auto;
-		clip-path: none;
-		height: auto;
-		overflow: visible;
-		position: static;
-		white-space: inherit;
-		width: auto;
-	}
-}
-
-@mixin size(
-	$width,
-	$height: $width
-) {
-
-	@if _is-size($height) {
-		height: $height;
-	} @else {
-
-		@error "`#{$height}` is not a valid length for the `$height` argument " +
-			"in the `size` mixin.";
-	}
-
-	@if _is-size($width) {
-		width: $width;
-	} @else {
-
-		@error "`#{$width}` is not a valid length for the `$width` argument " +
-			"in the `size` mixin.";
-	}
-}
-
-@mixin position(
-	$position,
-	$box-edge-values
-) {
-	$box-edge-values: _unpack-shorthand($box-edge-values);
-	$offsets: (
-		"top": nth($box-edge-values, 1),
-		"right": nth($box-edge-values, 2),
-		"bottom": nth($box-edge-values, 3),
-		"left": nth($box-edge-values, 4),
-	);
-
-	position: $position;
-
-	@each $offset, $value in $offsets {
-
-		@if _is-length($value) {
-			#{$offset}: $value;
-		}
-	}
-}
-
-@mixin clearfix {
-
-	&::after {
-		clear: both;
-		content: "";
-		display: block;
-	}
 }

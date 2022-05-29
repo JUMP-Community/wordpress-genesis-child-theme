@@ -33,7 +33,7 @@ class FooterWidgets {
 	 * @return string
 	 */
 	public function wrapper( string $output, string $original_output ) : string {
-		$output = 'open' === $original_output ? '<div class="container py-5">' . $output : $output;
+		$output = 'open' === $original_output ? '<div class="container py-2">' . $output : $output;
 		$output = 'close' === $original_output ? $output . '</div>' : $output;
 		return $output;
 	}

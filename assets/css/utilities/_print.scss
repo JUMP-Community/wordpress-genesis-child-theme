@@ -9,27 +9,13 @@
 	*::after {
 		background: transparent !important;
 		box-shadow: none !important;
-		color: $color--dark !important;
+		color: $dark !important;
 		text-shadow: none !important;
 	}
 
 	a,
 	a:visited {
 		text-decoration: underline;
-	}
-
-	a[href]::after {
-		content: " (" attr(href) ")";
-	}
-
-	abbr[title]::after {
-		content: " (" attr(title) ")";
-	}
-
-	a[href^="javascript:"]::after,
-	a[href^="#"]::after,
-	.site-title > a::after {
-		content: "";
 	}
 
 	thead {
@@ -58,7 +44,7 @@
 
 	blockquote,
 	pre {
-		border: $base--border;
+		border: $border-width solid $border-color;
 		page-break-inside: avoid;
 	}
 
@@ -85,8 +71,11 @@
 	.home-top,
 	.nav-primary,
 	.nav-secondary,
+	.nav-footer,
+	.navbar-expand-lg .navbar-collapse.nav-primary,
 	.post-edit-link,
-	.sidebar {
+	.sidebar,
+	.footer-widgets {
 		display: none !important;
 	}
 

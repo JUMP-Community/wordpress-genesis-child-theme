@@ -1,0 +1,10 @@
+//
+// Gutenberg block: Archives
+//
+
+.wp-block-archives {
+	
+	&-list {
+		@extend .list-unstyled;
+	}
+}

@@ -1,0 +1,10 @@
+//
+// Gutenberg block: Categories
+//
+
+.wp-block-categories {
+	
+	&-list {
+		@extend .list-unstyled;
+	}
+}

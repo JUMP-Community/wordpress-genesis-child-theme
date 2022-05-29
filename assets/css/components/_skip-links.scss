@@ -20,9 +20,9 @@
 
 		&:active,
 		&:focus {
-			background-color: $color--dark;
+			background-color: $dark;
 			border: 0;
-			color: $color--white;
+			color: $white;
 			left: $spacing--s;
 			padding: $spacing--s $spacing--m;
 			position: absolute;

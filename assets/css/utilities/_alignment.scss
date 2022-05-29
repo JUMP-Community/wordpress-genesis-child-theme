@@ -4,52 +4,58 @@
 
 .align {
 
+	&none,
+	&center,
+	&center img,
+	&left,
+	&right,
+	&wide,
+	&full {
+		margin-top: $spacing--m;
+		margin-right: auto !important;
+		margin-bottom: $spacing--m;
+		margin-left: auto !important;
+
+		@include media-breakpoint-up(lg) {
+			margin-top: $spacing--xl;
+			margin-bottom: $spacing--xl;
+		}
+	}
+
 	&left {
 		float: left;
-		margin: 0 $spacing--m 0 0;
+		margin: 0 $spacing--m 0 $spacing--xl;
 	}
 
 	&right {
 		float: right;
-		margin: 0 0 $spacing--m 0;
-	}
-
-	&center {
-		margin: 0 auto;
-
-		@include clearfix;
-	}
-
-	&wide,
-	&full {
-		left: 50%;
-		overflow: hidden;
-		position: relative;
-		width: 100vw;
-
-		.content-sidebar &,
-		.sidebar-content & {
-			left: auto;
-			margin-left: 0;
-			max-width: 100%;
-			transform: none;
-			width: 100%;
-		}
-
-		> img {
-			display: inline-block;
-			margin: $spacing--m auto;
-			width: 100%;
-		}
+		margin: 0 $spacing--xl 0 $spacing--m;
 	}
 
 	&wide {
-		max-width: 120%;
-		transform: translate(-50%);
+		max-width: $align-wide;
+		position: relative;
+		width: 100%;
 	}
 
 	&full {
-		margin-left: -50vw;
-		max-width: none;
+		margin-top: $spacing--l;
+		margin-bottom: $spacing--l;
+		max-width: 100vw;
+		position: relative;
+		width: 100%;
+
+		@include media-breakpoint-up(lg) {
+			margin-top: $spacing--xxl;
+			margin-bottom: $spacing--xxl;
+		}
+
+		& > figcaption,
+		& > .wp-caption-text {
+			margin-left: auto;
+			margin-right: auto;
+			max-width: $content-width;
+			width: 100%;
+		}
 	}
 }

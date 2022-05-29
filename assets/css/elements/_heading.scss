@@ -2,14 +2,16 @@
 // Heading.
 //
 
-#{$all-headings} {
+// #{$all-headings} {
+// 	font-family: $headings-font-family;
+// 	font-weight: $headings-font-weight;
+// 	line-height: $headings-line-height;
+// 	margin: 0 0 0.5em;
+// }
 
-	@include heading;
-}
+// @each $heading, $font-size in $font-sizes {
 
-@each $heading, $font-size in $font-sizes {
-
-	#{$heading} {
-		font-size: $font-size;
-	}
-}
+// 	#{$heading} {
+// 		font-size: $font-size;
+// 	}
+// }

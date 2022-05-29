@@ -10,7 +10,6 @@ namespace JUMP;
 return [
 	'add'    => [
 		'align-wide',
-		'automatic-feed-links',
 		'genesis-accessibility'    => [
 			'404-page',
 			'headings',
@@ -19,8 +18,8 @@ return [
 			'skip-links',
 		],
 		'genesis-custom-logo'      => [
-			'height'      => 60,
-			'width'       => 120,
+			'height'      => 50,
+			'width'       => 50,
 			'flex-height' => true,
 			'flex-width'  => true,
 			'header-text' => [
@@ -30,7 +29,8 @@ return [
 		],
 		'genesis-footer-widgets'   => 1,
 		'genesis-menus'            => [
-			'primary'        => __( 'Main Menu', 'jump' ),
+			'primary'        => __( 'Primary Menu', 'jump' ),
+			'secondary'      => __( 'Secondary Menu', 'jump' ),
 			'footer'         => __( 'Footer Menu', 'jump' ),
 			'command-center' => __( 'Command Center Menu', 'jump' ),
 		],
@@ -50,9 +50,17 @@ return [
 			'gallery',
 			'search-form',
 		],
-		'post-thumbnails',
 		'responsive-embeds',
 		'wp-block-styles',
 	],
-	'remove' => [],
+	'remove' => [
+		'genesis-breadcrumbs',
+		'genesis-auto-updates',
+		'genesis-archive-layouts',
+		'genesis-admin-menu',
+		'genesis-seo-settings-menu',
+		'genesis-import-export-menu',
+		'genesis-customizer-theme-settings',
+		'genesis-customizer-seo-settings',
+	],
 ];

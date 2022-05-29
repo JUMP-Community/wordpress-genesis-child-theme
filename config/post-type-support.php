@@ -8,13 +8,14 @@
 namespace JUMP;
 
 return [
-	'add'    => [],
+	'add'    => [
+		'genesis-singular-images' => [ 'post', 'page' ],
+	],
 	'remove' => [
 		'excerpt'                       => [ 'post', 'page' ],
 		'genesis-seo'                   => [ 'post', 'page' ],
 		'genesis-breadcrumbs-toggle'    => [ 'post', 'page' ],
 		'genesis-footer-widgets-toggle' => [ 'post', 'page' ],
-		'genesis-singular-images'       => [ 'post', 'page' ],
 		'genesis-title-toggle'          => [ 'post', 'page' ],
 		'genesis-adjacent-entry-nav'    => [ 'post', 'page' ],
 		'genesis-scripts'               => [ 'post', 'page' ],

@@ -9,7 +9,7 @@ namespace JUMP;
 
 return [
 	'avatar_size'               => 48,
-	'blog_cat_num'              => 9,
+	'blog_cat_num'              => 1,
 	'breadcrumb_home'           => 0,
 	'breadcrumb_front_page'     => 0,
 	'breadcrumb_posts_page'     => 0,
@@ -20,9 +20,9 @@ return [
 	'breadcrumb_attachment'     => 0,
 	'content_archive'           => 'full',
 	'content_archive_limit'     => 200,
-	'content_archive_thumbnail' => 1,
-	'image_size'                => 'featured',
+	'content_archive_thumbnail' => 0,
+	'image_size'                => 'large',
 	'image_alignment'           => 'alignnone',
 	'posts_nav'                 => 'numeric',
-	'site_layout'               => 'narrow-content',
+	'site_layout'               => 'full-width-content',
 ];

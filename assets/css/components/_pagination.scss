@@ -3,9 +3,9 @@
 //
 
 .pagination {
-	background-color: $color--background;
-	border-top: $base--border;
-	padding: $gutter 0;
+	background-color: $body-bg;
+	border-top: $border-width solid $border-color;
+	padding: $spacing--m 0;
 	width: 100%;
 
 	@include media-breakpoint-up(md) {
@@ -17,13 +17,11 @@
 	}
 
 	ul {
-		display: flex;
-		flex-wrap: wrap;
-		list-style-type: none;
-		margin-bottom: 0;
+		@extend .pagination;
 	}
 
 	li {
+		@extend .page-link;
 		margin-right: $spacing--s;
 	}
 
@@ -37,27 +35,5 @@
 
 	// Next item.
 	&-next {
-	}
-}
-
-// Adjacent posts nav.
-.adjacent-entry-pagination {
-
-	.narrow-content & {
-
-		.wrap {
-
-			@include media-breakpoint-up(md) {
-				width: $layout--width--content;
-			}
-		}
-	}
-
-	.wrap {
-		justify-content: space-between;
-
-		> div {
-			max-width: $one-half;
-		}
 	}
 }

@@ -3,7 +3,7 @@
 //
 
 ::placeholder {
-	color: $color--muted;
+	color: $gray-600;
 	opacity: 1; // Firefox fix
 }
 
@@ -13,8 +13,8 @@ abbr[title] {
 
 label {
 	display: inline-block;
-	font-size: $base--font-size;
-	font-weight: $font-weight--semibold;
+	font-size: $font-size-base;
+	font-weight: $font-weight-bold;
 	margin: 0 0 $spacing--s;
 
 	i + &,
@@ -22,7 +22,7 @@ label {
 	select + &,
 	textarea + & {
 		font-size: smaller;
-		font-weight: $font-weight--regular;
+		font-weight: $font-weight-base;
 	}
 }
 
@@ -30,33 +30,28 @@ input,
 select,
 textarea {
 	background-clip: padding-box; // Remove iOS box shadow
-	border: $base--border;
-	border-radius: $base--border--radius;
+	border: $border-width solid $border-color;
+	border-radius: $border-radius;
 	box-shadow: none;
-	font-size: $base--font-size;
+	font-size: $font-size-base;
 	margin: 0 0 $spacing--s;
 	padding: 1em;
 	width: 100%;
 
-	&:focus {
-		border-color: $color--primary;
-		outline: none;
-	}
-
 	&:disabled,
 	&:disabled:hover {
-		background-color: $color--muted;
-		border-color: $color--border;
+		background-color: $gray-400;
+		border-color: $border-color;
 		cursor: not-allowed;
 	}
 }
 
 textarea {
-	line-height: $base--line-height;
+	line-height: $line-height-base;
 }
 
 select {
-	height: calc((#{$base--font-size} / #{1rem}) + #{$base--font-size} * 2);
+	height: calc((#{$font-size-base} / #{1rem}) + #{$font-size-base} * 2);
 
 	@include padding(0 null);
 }
@@ -99,12 +94,14 @@ fieldset {
 legend {
 	display: table;
 	float: left;
-	font-size: $font-size--h5;
+	font-size: $h5-font-size;
+	font-family: $headings-font-family;
+	font-weight: $headings-font-weight;
+	line-height: $headings-line-height;
+	margin: 0 0 0.5em;
 	margin: 0 0 $spacing--s;
 	padding: 0;
 	width: 100%;
-
-	@include heading;
 
 	+ * {
 		clear: both;

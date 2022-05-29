@@ -46,12 +46,8 @@ class SiteInner {
 	 * @return string
 	 */
 	public function wrapper( string $output, string $original_output ) : string {
-		if ( 'open' === $original_output ) {
-			$output = '<div class="container py-5">' . $output;
-		}
-		if ( 'close' === $original_output ) {
-			$output = $output . '</div>';
-		}
+		$output = 'open' === $original_output ? '<div class="container-fluid py-md-5 px-md-0">' . $output : $output;
+		$output = 'close' === $original_output ? $output . '</div>' : $output;
 		return $output;
 	}
 }
