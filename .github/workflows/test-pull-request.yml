@@ -44,5 +44,5 @@ jobs:
     - name: Install Composer dependencies
       run: composer install
 
-    # - name: Static Analysis
-      # run: composer run test:static
+    - name: Static Analysis
+      run: composer run test:static
