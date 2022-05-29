@@ -103,7 +103,7 @@ class SiteHeader {
 	}
 
 	/**
-	 * Primary navigation
+	 * Primary and secondary navigation
 	 *
 	 * @param array $args Arguments.
 	 *
@@ -111,7 +111,7 @@ class SiteHeader {
 	 */
 	public function navigation( array $args ) : array {
 		// Bail early if not on correct menu.
-		if ( 'primary' !== $args['theme_location'] ) {
+		if ( ! in_array( $args['theme_location'], [ 'primary', 'secondary' ], true ) ) {
 			return $args;
 		}
 
