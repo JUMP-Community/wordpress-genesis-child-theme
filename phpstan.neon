@@ -10,7 +10,6 @@ parameters:
 		- templates/
 	ignoreErrors:
 		- '#Function genesis not found.#'
-		- '#Function genesis_get_custom_field not found.#'
 		- '#Function genesis_get_config not found.#'
 		- '#Function genesis_site_layout not found.#'
 		- '#Function genesis_register_widget_area not found.#'
