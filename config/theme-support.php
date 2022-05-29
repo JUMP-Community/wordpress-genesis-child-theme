@@ -57,10 +57,8 @@ return [
 		'genesis-breadcrumbs',
 		'genesis-auto-updates',
 		'genesis-archive-layouts',
-		'genesis-admin-menu',
 		'genesis-seo-settings-menu',
 		'genesis-import-export-menu',
-		'genesis-customizer-theme-settings',
 		'genesis-customizer-seo-settings',
 	],
 ];
