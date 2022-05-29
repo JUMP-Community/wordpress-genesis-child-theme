@@ -1,6 +1,6 @@
 <?php
 /**
- * Header
+ * Site Header
  *
  * @package JUMP
  */
@@ -11,9 +11,9 @@ use JUMP\Singleton;
 use JUMP\BootstrapNavWalker;
 
 /**
- * Class for Header
+ * Class for Site Header
  */
-class Header {
+class SiteHeader {
 	use Singleton;
 
 	/**

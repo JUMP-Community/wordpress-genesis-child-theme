@@ -69,8 +69,7 @@ Plugins\WpMailSmtp::instance()->setup();
 
 // Structure.
 Structure\Archive::instance()->setup();
-Structure\FooterWidgets::instance()->setup();
-Structure\Header::instance()->setup();
+Structure\SiteHeader::instance()->setup();
 Structure\Layout::instance()->setup();
 Structure\Pagination::instance()->setup();
 Structure\Single::instance()->setup();

@@ -25,7 +25,7 @@ class Single {
 		add_filter( 'edit_post_link', '__return_empty_string' );
 		// Remove sidebars.
 		remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
-		remove_action( 'genesis_sidebar', 'genesis_do_sidebar_alt' );
+		remove_action( 'genesis_sidebar_alt', 'genesis_do_sidebar_alt' );
 		// Remove entry footer.
 		remove_action( 'genesis_entry_footer', 'genesis_entry_footer_markup_open', 5 );
 		remove_action( 'genesis_entry_footer', 'genesis_post_meta' );

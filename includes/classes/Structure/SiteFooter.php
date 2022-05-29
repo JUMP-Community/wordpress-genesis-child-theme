@@ -29,7 +29,8 @@ class SiteFooter {
 	 * @return void
 	 */
 	public function setup() {
-		add_filter( 'genesis_structural_wrap-footer', [ $this, 'wrapper' ], 10, 2 );
+		add_filter( 'genesis_structural_wrap-footer', [ $this, 'wrapper_footer' ], 10, 2 );
+		add_filter( 'genesis_structural_wrap-footer-widgets', [ $this, 'wrapper_widgets' ], 10, 2 );
 		add_action( 'genesis_footer', [ $this, 'navigation' ], 8 );
 		add_filter( 'genesis_footer_output', [ $this, 'credits' ] );
 	}
@@ -42,8 +43,22 @@ class SiteFooter {
 	 *
 	 * @return string
 	 */
-	public function wrapper( string $output, string $original_output ) : string {
+	public function wrapper_footer( string $output, string $original_output ) : string {
 		$output = 'open' === $original_output ? '<div class="container py-3">' . $output : $output;
+		$output = 'close' === $original_output ? $output . '</div>' : $output;
+		return $output;
+	}
+
+	/**
+	 * Wrap the 'row' within a Bootstrap 'container' class
+	 *
+	 * @param string $output HTML markup.
+	 * @param string $original_output Open or close.
+	 *
+	 * @return string
+	 */
+	public function wrapper_widgets( string $output, string $original_output ) : string {
+		$output = 'open' === $original_output ? '<div class="container py-2">' . $output : $output;
 		$output = 'close' === $original_output ? $output . '</div>' : $output;
 		return $output;
 	}
