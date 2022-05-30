@@ -3,37 +3,20 @@
 //
 
 .pagination {
-	background-color: $body-bg;
-	border-top: $border-width solid $border-color;
-	padding: $spacing--m 0;
-	width: 100%;
-
-	@include media-breakpoint-up(md) {
-		margin-top: auto;
-	}
-
-	.wrap {
-		justify-content: center;
-	}
-
+	
 	ul {
 		@extend .pagination;
+		@extend .pagination-lg;
+		@extend .justify-content-center;
+		margin-bottom: 0;
 	}
 
 	li {
+		@extend .page-item;
+	}
+
+	a {
 		@extend .page-link;
-		margin-right: $spacing--s;
 	}
 
-	// Active item.
-	.active {
-	}
-
-	// Previous item.
-	&-prev {
-	}
-
-	// Next item.
-	&-next {
-	}
 }

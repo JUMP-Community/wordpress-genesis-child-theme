@@ -17,7 +17,6 @@ return [
 			'worker/init.php'                    => true,
 			'memberpress'                        => true,
 			'page-links-to'                      => true,
-			'sucuri-scanner/sucuri.php'          => true,
 			'tracking-code-for-google-analytics' => true,
 			'uncomment/plugin.php'               => true,
 			'wordpress-seo/wp-seo.php'           => true,
@@ -41,8 +40,8 @@ return [
 		'reading'             => [
 			'front-page'        => 83,
 			'front-page.posts'  => 212,
-			'posts-per-page'    => 25,
-			'posts-per-rss'     => 25,
+			'posts-per-page'    => 2,
+			'posts-per-rss'     => 2,
 			'rss-excerpt'       => 'summary',
 			'discourage-search' => false,
 		],

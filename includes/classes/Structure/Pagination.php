@@ -48,7 +48,7 @@ class Pagination {
 	 */
 	public function entry_pagination_wrap_open( string $open, array $args ) : string {
 		if ( 'archive-pagination' === $args['context'] || 'adjacent-entry-pagination' === $args['context'] ) {
-			$open .= '<div class="wrap">';
+			$open .= '<div class="container py-5"><div class="row">';
 		}
 
 		return $open;
@@ -64,7 +64,7 @@ class Pagination {
 	 */
 	public function entry_pagination_wrap_close( string $close, array $args ) : string {
 		if ( 'archive-pagination' === $args['context'] || 'adjacent-entry-pagination' === $args['context'] ) {
-			$close .= '</div>';
+			$close .= '</div></div>';
 		}
 
 		return $close;
