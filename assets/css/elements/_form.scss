@@ -3,27 +3,31 @@
 //
 
 label {
+
 	@extend .form-label;
 }
 
 input,
 select,
 textarea {
+
 	@extend .form-control;
 }
 
 .gfield_radio,
 .gfield_checkbox {
+
 	@extend .form-check;
 
 	label {
+
 		@extend .form-check-label;
 	}
 }
 
 input[type="checkbox"],
 input[type="radio"] {
+
 	@extend .form-check-input;
 }
-
 

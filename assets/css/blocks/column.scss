@@ -31,24 +31,25 @@
 	border-width: 2px;
 	border-style: solid;
 	border-color: $primary;
-    border-radius: 20px;
-    padding: $spacing--m;
+	border-radius: 20px;
+	padding: $spacing--m;
 
 	@include media-breakpoint-up(md) {
 		padding: $spacing--l;
 	}
 }
+
 .is-style-teal-column-outline {
 	border-color: $teal;
-    background: radial-gradient( ellipse at bottom, $white 10%, rgba(0, 0, 0, 0) 300% ), url('../../images/center.png') 50% 130px no-repeat;
+	background: radial-gradient(ellipse at bottom, $white 10%, rgba(0, 0, 0, 0) 300%), url("../../images/center.png") 50% 130px no-repeat;
 }
 
 .is-style-purple-column-outline {
 	border-color: $purple;
-    background: radial-gradient( ellipse at bottom, $white -100%, rgba(0, 0, 0, 0) 200% ), url('../../images/center.png') 50% 130px no-repeat;
+	background: radial-gradient(ellipse at bottom, $white -100%, rgba(0, 0, 0, 0) 200%), url("../../images/center.png") 50% 130px no-repeat;
 }
 
 .is-style-pink-column-outline {
 	border-color: $pink;
-    background: radial-gradient( ellipse at bottom, $white 10%, rgba(0, 0, 0, 0) 300% ), url('../../images/center.png') 50% 130px no-repeat;
+	background: radial-gradient(ellipse at bottom, $white 10%, rgba(0, 0, 0, 0) 300%), url("../../images/center.png") 50% 130px no-repeat;
 }

@@ -3,8 +3,9 @@
 //
 
 .wp-block-archives {
-	
+
 	&-list {
+
 		@extend .list-unstyled;
 	}
 }

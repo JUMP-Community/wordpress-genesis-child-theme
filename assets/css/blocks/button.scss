@@ -6,6 +6,7 @@
 	margin-bottom: $spacing--m;
 
 	&__link {
+
 		@include button;
 	}
 }

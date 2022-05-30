@@ -3,9 +3,11 @@
 //
 
 .wp-block-coblocks-alert {
+
 	@extend .alert;
 
 	&__title {
+
 		@extend .alert-heading;
 		font-weight: $font-weight-bold;
 	}

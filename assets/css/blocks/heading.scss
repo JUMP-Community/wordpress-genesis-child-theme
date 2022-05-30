@@ -4,16 +4,16 @@
 
 .is-style-pink-heading-outline,
 .is-style-black-heading-outline {
-    color: $white;
+	color: $white;
 	font-weight: $font-weight-bold;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: $headings-color;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: $headings-color;
 }
 
 .is-style-pink-heading-outline {
-    -webkit-text-stroke-color: $pink;
+	-webkit-text-stroke-color: $pink;
 }
 
 .is-style-black-heading-outline {
-    -webkit-text-stroke-color: $body-color;
+	-webkit-text-stroke-color: $body-color;
 }
