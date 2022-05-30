@@ -28,11 +28,6 @@ if ( file_exists( JUMP_VENDOR_PATH . '/autoload.php' ) ) {
 	require JUMP_VENDOR_PATH . '/autoload.php';
 }
 
-// Functions.
-// Do not put into autoloader.
-require_once JUMP_FUNCTIONS_PATH . '/header.php';
-require_once JUMP_FUNCTIONS_PATH . '/helpers.php';
-
 // Configuration.
 // Do not put into autoloader.
 require_once JUMP_CONFIG_PATH . '/genesis-settings.php';

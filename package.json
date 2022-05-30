@@ -1,5 +1,5 @@
 {
-	"name": "jump",
+	"name": "jumpcommunity/jump",
 	"version": "1.0.0",
 	"license": "GPL-2.0-or-later",
 	"repository": {
@@ -22,9 +22,6 @@
 		"node": ">=16.14.2",
 		"npm": ">=8.10.0"
 	},
-	"dependencies": {
-		"normalize.css": "^8.0.1"
-	},
 	"devDependencies": {
 		"@popperjs/core": "^2.11.2",
 		"@wordpress/scripts": "^23.1.0",
@@ -32,7 +29,6 @@
 		"eslint": "^8.15.0",
 		"headroom.js": "^0.12.0",
 		"laravel-mix": "^6.0.43",
-		"laravel-mix-simple-image-processing": "^1.0.7",
 		"resolve-url-loader": "^5.0.0",
 		"stylelint": "^14.7.1"
 	},

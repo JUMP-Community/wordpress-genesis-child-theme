@@ -1,0 +1,53 @@
+//
+// Custom mixins.
+//
+
+//
+// Button mixin
+//
+// Used for both front end and block editor styling.
+//
+// @group  Tools
+//
+@mixin button {
+	background-color: $pink;
+	border: 3px solid $black;
+	border-radius: 50px;
+	box-shadow: 0 15px 0 -6px #000;
+	color: $white;
+	cursor: pointer;
+	display: inline-block;
+	font-size: $font-size-lg;
+	font-weight: $font-weight-bold;
+	line-height: 1;
+    margin: 0 0 8px !important;
+	letter-spacing: 1px;
+	padding: $spacing--m $spacing--l;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: $transition-base;
+	white-space: normal;
+	width: auto;
+
+	&:hover,
+	&:focus,
+	&:active {
+		box-shadow: 0 8px 0 -6px #000;
+		margin: 8px 0 0 !important;
+		outline: none;
+		text-decoration: none;
+	}
+
+	&:disabled {
+
+		&,
+		&:hover,
+		&:focus {
+			background-color: $gray-400;
+			cursor: not-allowed;
+			opacity: 0.5;
+		}
+	}
+
+}

@@ -16,7 +16,9 @@
 	a {
 		color: $body-color;
 
-		@include hover-focus {
+		&:hover,
+		&:focus,
+		&:active {
 			color: $primary;
 		}
 	}

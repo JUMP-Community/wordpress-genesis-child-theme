@@ -40,8 +40,8 @@ return [
 		'reading'             => [
 			'front-page'        => 83,
 			'front-page.posts'  => 212,
-			'posts-per-page'    => 2,
-			'posts-per-rss'     => 2,
+			'posts-per-page'    => 10,
+			'posts-per-rss'     => 10,
 			'rss-excerpt'       => 'summary',
 			'discourage-search' => false,
 		],

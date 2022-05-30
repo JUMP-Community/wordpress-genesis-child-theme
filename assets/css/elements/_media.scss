@@ -12,8 +12,6 @@ video,
 }
 
 img {
-	height: auto;
-	max-width: 100%;
-	vertical-align: bottom;
+	@extend .img-fluid;
 }
 

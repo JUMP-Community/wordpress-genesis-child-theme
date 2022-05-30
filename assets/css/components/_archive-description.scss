@@ -3,7 +3,9 @@
 //
 
 .archive {
-	// Archive description box.
+
+	&-title {}
+	
 	&-description {
 		margin-bottom: $spacing--xxl;
 
@@ -17,6 +19,4 @@
 		}
 	}
 
-	// Archive description title.
-	&-title {}
 }

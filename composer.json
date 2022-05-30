@@ -1,11 +1,16 @@
 {
-	"name": "jump/jump",
+	"name": "jumpcommunity/jump",
 	"type": "wordpress-theme",
 	"license": "GPL-2.0-or-later",
 	"authors": [
 		{
-			"name": "JUMP Community",
-			"homepage": "https://joinjump.community",
+			"name": "Clayton Collie",
+			"homepage": "https://www.claytoncollie.com",
+			"role": "Developer"
+		},
+		{
+			"name": "Fiig",
+			"homepage": "https://fiig.xyz",
 			"role": "Developer"
 		}
 	],
