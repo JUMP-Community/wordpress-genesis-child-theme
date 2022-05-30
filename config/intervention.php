@@ -59,11 +59,11 @@ return [
 				'crop'   => false,
 			],
 			'sizes.large'      => [
-				'width'  => 1024,
-				'height' => 1024,
-				'crop'   => false,
+				'width'  => 1040,
+				'height' => 600,
+				'crop'   => true,
 			],
-			'mimes.svg'        => true,
+			'mimes.svg'        => false,
 			'uploads.organize' => true,
 		],
 		'permalinks'          => [
