@@ -28,6 +28,7 @@
 			max-width: $content-width;
 		}
 
+		.page &,
 		.single & {
 			margin-bottom: $spacing--m;
 
