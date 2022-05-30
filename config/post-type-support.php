@@ -19,7 +19,7 @@ return [
 		'genesis-title-toggle'              => [ 'post', 'page' ],
 		'genesis-adjacent-entry-nav'        => [ 'post', 'page' ],
 		'genesis-scripts'                   => [ 'post', 'page' ],
-		'genesis-entry-meta-before-content' => [ 'single-memberpressproduct' ],
-		'genesis-entry-meta-after-content'  => [ 'single-memberpressproduct' ],
+		'genesis-entry-meta-before-content' => [ 'memberpressproduct' ],
+		'genesis-entry-meta-after-content'  => [ 'memberpressproduct' ],
 	],
 ];
