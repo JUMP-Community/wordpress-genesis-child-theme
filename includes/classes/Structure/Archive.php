@@ -9,8 +9,6 @@ namespace JUMP\Structure;
 
 use JUMP\Singleton;
 
-use function JUMP\Functions\is_type_archive;
-
 /**
  * Class for Archive templates
  */
