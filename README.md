@@ -1,4 +1,4 @@
-# JUMP Starter Theme
+# JUMP Child Theme
 
 ## Features
 
