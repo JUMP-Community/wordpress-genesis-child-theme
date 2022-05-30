@@ -2,108 +2,28 @@
 // Form.
 //
 
-::placeholder {
-	color: $gray-600;
-	opacity: 1; // Firefox fix
-}
-
-abbr[title] {
-	text-decoration: none;
-}
-
 label {
-	display: inline-block;
-	font-size: $font-size-base;
-	font-weight: $font-weight-bold;
-	margin: 0 0 $spacing--s;
-
-	i + &,
-	input + &,
-	select + &,
-	textarea + & {
-		font-size: smaller;
-		font-weight: $font-weight-base;
-	}
+	@extend .form-label;
 }
 
 input,
 select,
 textarea {
-	background-clip: padding-box; // Remove iOS box shadow
-	border: $border-width solid $border-color;
-	border-radius: $border-radius;
-	box-shadow: none;
-	font-size: $font-size-base;
-	margin: 0 0 $spacing--s;
-	padding: 1em;
-	width: 100%;
+	@extend .form-control;
+}
 
-	&:disabled,
-	&:disabled:hover {
-		background-color: $gray-400;
-		border-color: $border-color;
-		cursor: not-allowed;
+.gfield_radio,
+.gfield_checkbox {
+	@extend .form-check;
+
+	label {
+		@extend .form-check-label;
 	}
-}
-
-textarea {
-	line-height: $line-height-base;
-}
-
-select {
-	height: calc((#{$font-size-base} / #{1rem}) + #{$font-size-base} * 2);
-
-	@include padding(0 null);
-}
-
-select[multiple] {
-	height: auto;
 }
 
 input[type="checkbox"],
-input[type="image"],
 input[type="radio"] {
-	margin-right: $spacing--s;
-	width: auto;
+	@extend .form-check-input;
 }
 
-input[type="color"] {
-	min-height: $spacing--xl;
-}
 
-input[type="search"] {
-	appearance: none;
-
-	&::-webkit-search-cancel-button,
-	&::-webkit-search-results-button {
-		display: none;
-	}
-}
-
-fieldset {
-	border: 0;
-	margin: 0;
-	min-width: 0;
-	padding: 0.01em 0 0;
-
-	body:not(:-moz-handler-blocked) & {
-		display: table-cell;
-	}
-}
-
-legend {
-	display: table;
-	float: left;
-	font-size: $h5-font-size;
-	font-family: $headings-font-family;
-	font-weight: $headings-font-weight;
-	line-height: $headings-line-height;
-	margin: 0 0 0.5em;
-	margin: 0 0 $spacing--s;
-	padding: 0;
-	width: 100%;
-
-	+ * {
-		clear: both;
-	}
-}
