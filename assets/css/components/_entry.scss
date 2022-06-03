@@ -40,11 +40,10 @@
 
 	// Entry title.
 	&-title {
-		text-align: center;
+		text-align: left;
 
-		.blog &,
-		.archive & {
-			text-align: left;
+		.single & {
+			text-align: center;
 		}
 	}
 

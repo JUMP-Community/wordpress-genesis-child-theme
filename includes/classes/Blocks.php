@@ -31,6 +31,14 @@ class Blocks {
 	 */
 	public function register_heading_style() {
 		register_block_style(
+			'core/button',
+			array(
+				'name'       => 'button-large',
+				'label'      => __( 'Large', 'jump' ),
+				'is_default' => false,
+			)
+		);
+		register_block_style(
 			'core/heading',
 			array(
 				'name'       => 'pink-heading-outline',

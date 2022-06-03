@@ -21,11 +21,23 @@ class Archive {
 	 * @return void
 	 */
 	public function setup() {
-		// Remove read more link.
-		add_filter( 'get_the_content_more_link', '__return_empty_string' );
-		add_filter( 'the_content_more_link', '__return_empty_string' );
+		add_filter( 'get_the_content_more_link', [ $this, 'read_more_link' ] );
+		add_filter( 'the_content_more_link', [ $this, 'read_more_link' ] );
 		// Remove featured image.
 		remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
+	}
+
+	/**
+	 * Modify the content limit read more link
+	 *
+	 * @param string $more_link_text Default more link text.
+	 *
+	 * @return string
+	 */
+	public function read_more_link( string $more_link_text ) : string {
+		$more_link_text = \str_replace( '<a', '</p><p><a', $more_link_text );
+		$more_link_text = \str_replace( [ '[', ']', '...' ], '', $more_link_text );
+		return \str_replace( 'more-link', 'button', $more_link_text );
 	}
 
 }

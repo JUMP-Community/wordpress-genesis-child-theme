@@ -3,9 +3,12 @@
 //
 
 .site-container {
-	background-image: url("../../images/clouds.jpg");
-	background-color: $white;
-	background-position: top center;
-	background-repeat: no-repeat;
-	background-size: contain;
+
+	.bg-clouds & {
+		background-image: url("../../images/clouds.jpg");
+		background-color: $white;
+		background-position: top center;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
 }

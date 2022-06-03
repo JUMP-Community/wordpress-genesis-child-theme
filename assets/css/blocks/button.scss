@@ -8,5 +8,11 @@
 	&__link {
 
 		@include button;
+
+		.is-style-button-large & {
+			box-shadow: 0 15px 0 -6px $black;
+			font-size: $font-size-lg;
+			padding: $spacing--m $spacing--l;
+		}
 	}
 }
