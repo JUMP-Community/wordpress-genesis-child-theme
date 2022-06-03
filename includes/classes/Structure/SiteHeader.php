@@ -43,7 +43,7 @@ class SiteHeader {
 	 * @return array
 	 */
 	public function container( array $attributes ) : array {
-		$attributes['class'] .= ' navbar navbar-expand-lg navbar-light sticky-top py0 mb-5';
+		$attributes['class'] .= ' navbar navbar-expand-lg navbar-light sticky-top py-2 mb-5';
 		return $attributes;
 	}
 
