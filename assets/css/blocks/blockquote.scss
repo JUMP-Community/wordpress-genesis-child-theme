@@ -1,0 +1,12 @@
+//
+// Gutenberg block: Blockquote
+//
+
+.wp-block-quote {
+	
+	@extend .alert;
+	@extend .alert-secondary;
+	border: 0;
+	border-left: 0.25em solid $pink;
+	border-radius: 0;
+}
