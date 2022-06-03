@@ -7,35 +7,20 @@
 
 	&__link {
 
-		@extend .btn;
-		@extend .btn-jump;
-
-		.is-style-outline & {
-			@extend .btn-outline-jump;
-		}
+		@include button;
 
 		.is-style-button-large & {
+			@include button;
 			@extend .btn-lg;
 		}
 
-		.is-style-circular & {
-			
-		}
+		.is-style-outline & {}
 
-		.is-style-3d & {
-			
-		}
+		.is-style-circular & {}
 
-		.is-style-shadow & {
-			
-		}
+		.is-style-3d & {}
 
-		// @include button;
+		.is-style-shadow & {}
 
-		// .is-style-button-large & {
-		// 	box-shadow: 0 15px 0 -6px $black;
-		// 	font-size: $font-size-lg;
-		// 	padding: $spacing--m $spacing--l;
-		// }
 	}
 }

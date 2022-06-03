@@ -9,22 +9,17 @@
 //
 // @group  Tools
 //
+
 @mixin button {
-	background-color: $pink;
-	border: 3px solid $black;
+	@extend .btn;
+	@extend .btn-jump;
+	border-color: $black;
 	border-radius: 50px;
 	box-shadow: 0 8px 0 -3px $black;
 	color: $white;
-	cursor: pointer;
 	display: inline-block;
-	font-size: $font-size-sm;
-	font-weight: $font-weight-bold;
-	line-height: 1;
 	margin: 0 0 8px !important;
 	letter-spacing: 1px;
-	padding: $spacing--s $spacing--m;
-	text-align: center;
-	text-decoration: none;
 	text-transform: uppercase;
 	transition: $transition-base;
 	white-space: normal;
@@ -34,21 +29,10 @@
 	&:focus,
 	&:active {
 		color: $white;
+		border-color: $black;
 		box-shadow: 0 8px 0 -6px $black;
 		margin: 8px 0 0 !important;
 		outline: none;
-		text-decoration: none;
-	}
-
-	&:disabled {
-
-		&,
-		&:hover,
-		&:focus {
-			background-color: $gray-400;
-			cursor: not-allowed;
-			opacity: 0.5;
-		}
 	}
 
 }

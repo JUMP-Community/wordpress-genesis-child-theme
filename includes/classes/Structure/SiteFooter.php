@@ -33,6 +33,7 @@ class SiteFooter {
 		add_filter( 'genesis_structural_wrap-footer-widgets', [ $this, 'wrapper_widgets' ], 10, 2 );
 		add_action( 'genesis_footer', [ $this, 'navigation' ], 8 );
 		add_filter( 'genesis_footer_output', [ $this, 'credits' ] );
+		add_filter( 'genesis_attr_nav-footer', [ $this, 'nav_aria_label' ] );
 	}
 
 	/**
@@ -113,6 +114,18 @@ class SiteFooter {
 			do_shortcode( '[footer_copyright before=" "]' ),
 			esc_html__( 'Parachute, LLC', 'jump' )
 		);
+	}
+
+	/**
+	 * Site footer aria label
+	 *
+	 * @param array $attributes Default attributes.
+	 *
+	 * @return array
+	 */
+	public function nav_aria_label( array $attributes ) : array {
+		$attributes['aria-label'] = esc_html__( 'Footer Navigation', 'jump' );
+		return $attributes;
 	}
 
 }

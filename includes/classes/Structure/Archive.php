@@ -37,7 +37,7 @@ class Archive {
 	public function read_more_link( string $more_link_text ) : string {
 		$more_link_text = \str_replace( '<a', '</p><p><a', $more_link_text );
 		$more_link_text = \str_replace( [ '[', ']', '...' ], '', $more_link_text );
-		return \str_replace( 'more-link', 'btn btn-primary', $more_link_text );
+		return \str_replace( 'more-link', 'button', $more_link_text );
 	}
 
 }
