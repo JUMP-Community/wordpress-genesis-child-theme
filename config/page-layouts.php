@@ -10,6 +10,7 @@ namespace JUMP;
 return [
 	'add'    => [],
 	'remove' => [
+		'content-sidebar',
 		'sidebar-content',
 		'content-sidebar-sidebar',
 		'sidebar-sidebar-content',
