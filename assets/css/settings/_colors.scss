@@ -2,12 +2,17 @@
 // Colors.
 //
 
-$primary: #212529;
 $pink: #FD11CB;
 $teal: #2DFFFF;
 
-$link-color: #212529;
-$link-hover-color: #FD11CB;
+$primary: #212529;
 
-$navbar-light-color: #212529;
+$jump-colors: (
+  "jump": $pink
+);
+
+$link-color: $primary;
+$link-hover-color: $pink;
+
+$navbar-light-color: $primary;
 $navbar-light-toggler-border-color: transparent;

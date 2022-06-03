@@ -7,12 +7,35 @@
 
 	&__link {
 
-		@include button;
+		@extend .btn;
+		@extend .btn-jump;
+
+		.is-style-outline & {
+			@extend .btn-outline-jump;
+		}
 
 		.is-style-button-large & {
-			box-shadow: 0 15px 0 -6px $black;
-			font-size: $font-size-lg;
-			padding: $spacing--m $spacing--l;
+			@extend .btn-lg;
 		}
+
+		.is-style-circular & {
+			
+		}
+
+		.is-style-3d & {
+			
+		}
+
+		.is-style-shadow & {
+			
+		}
+
+		// @include button;
+
+		// .is-style-button-large & {
+		// 	box-shadow: 0 15px 0 -6px $black;
+		// 	font-size: $font-size-lg;
+		// 	padding: $spacing--m $spacing--l;
+		// }
 	}
 }

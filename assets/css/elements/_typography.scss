@@ -2,6 +2,13 @@
 // Typography.
 //
 
+a {
+	text-decoration-color: $pink;
+	text-decoration-thickness: .1em;
+	text-underline-offset: 1.5px;
+	text-decoration-skip-ink: 0;
+}
+
 p {
 	margin-bottom: $paragraph-margin-bottom;
 }

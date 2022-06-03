@@ -21,7 +21,8 @@ class Setup {
 	 * @return void
 	 */
 	public function setup() {
-		add_action( 'after_setup_theme', [ $this, 'register_support' ], 5 );
+		add_action( 'after_setup_theme', [ $this, 'register_support_before' ], 5 );
+		add_action( 'init', [ $this, 'register_support_after' ], 15 );
 	}
 
 	/**
@@ -29,12 +30,11 @@ class Setup {
 	 *
 	 * @return void
 	 */
-	public function register_support() {
-		$theme_support     = \genesis_get_config( 'theme-support' );
-		$post_type_support = \genesis_get_config( 'post-type-support' );
-		$image_sizes       = \genesis_get_config( 'image-sizes' );
-		$page_layouts      = \genesis_get_config( 'page-layouts' );
-		$widget_areas      = \genesis_get_config( 'widget-areas' );
+	public function register_support_before() {
+		$theme_support = \genesis_get_config( 'theme-support' );
+		$image_sizes   = \genesis_get_config( 'image-sizes' );
+		$page_layouts  = \genesis_get_config( 'page-layouts' );
+		$widget_areas  = \genesis_get_config( 'widget-areas' );
 
 		// Add theme supports.
 		\array_walk(
@@ -49,26 +49,6 @@ class Setup {
 			$theme_support['remove'],
 			function ( $name ) {
 				\remove_theme_support( $name );
-			}
-		);
-
-		// Add post type supports.
-		\array_walk(
-			$post_type_support['add'],
-			function ( $post_types, $feature ) {
-				foreach ( $post_types as $post_type ) {
-					\add_post_type_support( $post_type, $feature );
-				}
-			}
-		);
-
-		// Remove post type supports.
-		\array_walk(
-			$post_type_support['remove'],
-			function ( $post_types, $feature ) {
-				foreach ( $post_types as $post_type ) {
-					\remove_post_type_support( $post_type, $feature );
-				}
 			}
 		);
 
@@ -119,5 +99,35 @@ class Setup {
 				\unregister_sidebar( $id );
 			}
 		);
+	}
+
+	/**
+	 * Theme setup.
+	 *
+	 * @return void
+	 */
+	public function register_support_after() {
+		$post_type_support = \genesis_get_config( 'post-type-support' );
+
+		// Add post type supports.
+		\array_walk(
+			$post_type_support['add'],
+			function ( $post_types, $feature ) {
+				foreach ( $post_types as $post_type ) {
+					\add_post_type_support( $post_type, $feature );
+				}
+			}
+		);
+
+		// Remove post type supports.
+		\array_walk(
+			$post_type_support['remove'],
+			function ( $post_types, $feature ) {
+				foreach ( $post_types as $post_type ) {
+					\remove_post_type_support( $post_type, $feature );
+				}
+			}
+		);
+
 	}
 }

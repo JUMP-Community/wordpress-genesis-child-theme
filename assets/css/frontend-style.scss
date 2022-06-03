@@ -15,6 +15,11 @@
 @import "settings/_index";
 
 @import "~bootstrap/scss/variables";
+
+// Adhoc sass overrides.
+$theme-colors: map-merge($theme-colors, $jump-colors);
+
+// Bootstrap utils.
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/utilities";
 
@@ -47,3 +52,4 @@
 @import "objects/_index";
 @import "components/_index";
 @import "blocks/_index";
+@import "plugins/_index";
