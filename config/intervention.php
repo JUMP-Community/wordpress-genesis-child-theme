@@ -21,6 +21,18 @@ return [
 			'uncomment/plugin.php'               => true,
 			'wordpress-seo/wp-seo.php'           => true,
 		],
+		'general'             => [
+			'site-title'   => 'JUMP',
+			'tagline'      => 'Into web3',
+			'admin-email'  => 'jeff@parachute.xyz',
+			'membership'   => true,
+			'default-role' => 'subscriber',
+			'language'     => 'en_US',
+			'timezone'     => 'America/Chicago',
+			'date-format'  => 'F j, Y',
+			'time-format'  => 'g:i a',
+			'week-starts'  => 'Mon',
+		],
 		'writing'             => [
 			'default-category'    => 9,
 			'default-post-format' => 'standard',
