@@ -3,18 +3,7 @@
 //
 
 .entry {
-
-	.blog &,
-	.archive & {
-		margin-bottom: $spacing--xxl;
-
-		&:last-of-type {
-
-			@include media-breakpoint-up(sm) {
-				margin-bottom: 0;
-			}
-		}
-	}
+	margin-bottom: $spacing--xxl;
 
 	// Entry header.
 	&-header {
