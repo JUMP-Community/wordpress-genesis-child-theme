@@ -22,8 +22,8 @@ return [
 			'wordpress-seo/wp-seo.php'           => true,
 		],
 		'general'             => [
-			'site-title'   => 'JUMP',
-			'tagline'      => 'Into web3',
+			// 'site-title'   => 'JUMP',
+			// 'tagline'      => 'Into web3',
 			'admin-email'  => 'jeff@parachute.xyz',
 			'membership'   => true,
 			'default-role' => 'subscriber',
