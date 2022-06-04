@@ -12,6 +12,10 @@ a {
 
 p {
 	margin-bottom: $paragraph-margin-bottom;
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
 }
 
 blockquote,
@@ -19,6 +23,18 @@ cite,
 em,
 i {
 	font-style: italic;
+}
+
+ul {
+	
+	&.is-style-none {
+		@extend .list-unstyled;
+
+		li {
+			margin-bottom: $paragraph-margin-bottom;
+		}
+	}
+
 }
 
 code,

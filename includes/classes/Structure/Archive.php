@@ -22,6 +22,7 @@ class Archive {
 	 */
 	public function setup() {
 		add_action( 'pre_get_posts', [ $this, 'posts_page_category' ] );
+		add_action( 'wp', [ $this, 'resources_category' ] );
 		add_filter( 'get_the_content_more_link', [ $this, 'read_more_link' ] );
 		add_filter( 'the_content_more_link', [ $this, 'read_more_link' ] );
 		// Remove featured image.
@@ -46,6 +47,18 @@ class Archive {
 			return;
 		}
 		$query->set( 'cat', '1' );
+	}
+
+	/**
+	 * Only show linked title on Resources archive view.
+	 *
+	 * @return void
+	 */
+	public function resources_category() {
+		if ( is_category( 'resources' ) ) {
+			remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
+			remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
+		}
 	}
 
 	/**
