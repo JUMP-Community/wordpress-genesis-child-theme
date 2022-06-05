@@ -16,3 +16,11 @@ img {
 	@extend .img-fluid;
 }
 
+.icon {
+	fill: $gray-600;
+	width: 1em;
+	height: 1em;
+	padding-left: $spacing--m;
+	vertical-align: -.125em;
+}
+
