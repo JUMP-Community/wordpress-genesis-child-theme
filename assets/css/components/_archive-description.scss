@@ -4,11 +4,25 @@
 
 .archive {
 
-	// Archive description box.
-	&-description {
-		width: 100%;
+	&-title {
+		color: $white;
+		font-weight: $font-weight-bold;
+		-webkit-text-stroke-width: 2px;
+		-webkit-text-stroke-color: $headings-color;
+		-webkit-text-stroke-color: $pink;
 	}
 
-	// Archive description title.
-	&-title {}
+	&-description {
+		margin-bottom: $spacing--xxl;
+
+		& * {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		& > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(.entry-image) {
+			max-width: $content-width;
+		}
+	}
+
 }

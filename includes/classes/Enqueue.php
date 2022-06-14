@@ -24,9 +24,6 @@ class Enqueue {
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_assets' ] );
 		add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_assets' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'deregister_scripts' ] );
-		// Genesis style trump.
-		// remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
-		// add_action( 'wp_enqueue_scripts', 'genesis_enqueue_main_stylesheet', 99 );
 	}
 
 	/**

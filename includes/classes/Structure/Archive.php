@@ -9,8 +9,6 @@ namespace JUMP\Structure;
 
 use JUMP\Singleton;
 
-use function JUMP\Functions\is_type_archive;
-
 /**
  * Class for Archive templates
  */
@@ -23,50 +21,78 @@ class Archive {
 	 * @return void
 	 */
 	public function setup() {
-		add_filter( 'post_class', [ $this, 'archive_post_class' ] );
+		add_action( 'pre_get_posts', [ $this, 'posts_page_category' ] );
+		add_action( 'wp', [ $this, 'resources_category' ] );
+		add_filter( 'genesis_markup_entry-title-link_close', [ $this, 'external_link_svg' ], 10, 2 );
 		add_filter( 'get_the_content_more_link', [ $this, 'read_more_link' ] );
 		add_filter( 'the_content_more_link', [ $this, 'read_more_link' ] );
-		add_filter( 'genesis_author_box_gravatar_size', [ $this, 'author_box_gravatar' ] );
-		add_action( 'genesis_entry_header', [ $this, 'entry_wrap_open' ], 4 );
-		add_action( 'genesis_entry_footer', [ $this, 'entry_wrap_close' ], 15 );
-		add_filter( 'genesis_markup_entry-header_open', [ $this, 'widget_entry_wrap_open' ], 10, 2 );
-		// Reposition entry image.
+		// Remove featured image.
 		remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
-		add_action( 'genesis_entry_header', 'genesis_do_post_image', 1 );
 	}
 
 	/**
-	 * Add column class to archive posts.
+	 * Limit the blog roll to only show a specific category.
 	 *
-	 * @param array $classes Array of post classes.
+	 * @param \WP_Query $query WordPress Query.
 	 *
-	 * @return array
+	 * @return void
 	 */
-	public function archive_post_class( array $classes ): array {
-		if ( ! is_type_archive() ) {
-			return $classes;
+	public function posts_page_category( \WP_Query $query ) {
+		if ( $query->is_admin() ) {
+			return;
 		}
-
-		if ( \did_action( 'genesis_before_sidebar_widget_area' ) ) {
-			return $classes;
+		if ( ! $query->is_main_query() ) {
+			return;
 		}
-
-		if ( 'full-width-content' === \genesis_site_layout() ) {
-			$classes[] = 'one-third';
-			$count     = 3;
-
-		} else {
-			$classes[] = 'one-half';
-			$count     = 2;
+		if ( ! $query->is_home() ) {
+			return;
 		}
+		$query->set( 'cat', '1' );
+	}
 
-		global $wp_query;
-
-		if ( 0 === $wp_query->current_post || 0 === $wp_query->current_post % $count ) {
-			$classes[] = 'first';
+	/**
+	 * Only show linked title on Resources archive view.
+	 *
+	 * @return void
+	 */
+	public function resources_category() {
+		// Run on all archives, blog home, search results.
+		if ( is_singular() ) {
+			return;
 		}
+		// Only run on specific category designation.
+		if ( ! has_category( 'resources' ) ) {
+			return;
+		}
+		remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
+		remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
+	}
 
-		return $classes;
+	/**
+	 * Append svg icon to end of entry title link if applicable
+	 *
+	 * @param string $close Closing markup.
+	 * @param array  $args Arguments.
+	 *
+	 * @return string
+	 */
+	public function external_link_svg( string $close, array $args ) : string {
+		// Run on all archives, blog home, search results.
+		if ( is_singular() ) {
+			return $close;
+		}
+		// Only run on specific category designation.
+		if ( ! has_category( 'resources' ) ) {
+			return $close;
+		}
+		// Check if we have an external link in the database.
+		$_links_to = get_post_meta( get_the_ID(), '_links_to', true );
+		if ( empty( $_links_to ) ) {
+			return $close;
+		}
+		// Append icon to the end of the markup.
+		$close = sprintf( '</a>%s', '<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-external-link" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 64C256 46.33 270.3 32 288 32H415.1C415.1 32 415.1 32 415.1 32C420.3 32 424.5 32.86 428.2 34.43C431.1 35.98 435.5 38.27 438.6 41.3C438.6 41.35 438.6 41.4 438.7 41.44C444.9 47.66 447.1 55.78 448 63.9C448 63.94 448 63.97 448 64V192C448 209.7 433.7 224 416 224C398.3 224 384 209.7 384 192V141.3L214.6 310.6C202.1 323.1 181.9 323.1 169.4 310.6C156.9 298.1 156.9 277.9 169.4 265.4L338.7 96H288C270.3 96 256 81.67 256 64V64zM0 128C0 92.65 28.65 64 64 64H160C177.7 64 192 78.33 192 96C192 113.7 177.7 128 160 128H64V416H352V320C352 302.3 366.3 288 384 288C401.7 288 416 302.3 416 320V416C416 451.3 387.3 480 352 480H64C28.65 480 0 451.3 0 416V128z"/></svg>' );
+		return $close;
 	}
 
 	/**
@@ -77,73 +103,10 @@ class Archive {
 	 * @return string
 	 */
 	public function read_more_link( string $more_link_text ) : string {
-		return \str_replace( [ '[', ']', '...' ], '', $more_link_text );
+		$more_link_text = \str_replace( '<a', '</p><p><a', $more_link_text );
+		$more_link_text = \str_replace( [ '[', ']', '...' ], '', $more_link_text );
+		return \str_replace( 'more-link', 'button', $more_link_text );
 	}
 
-	/**
-	 * Modifies size of the Gravatar in the author box.
-	 *
-	 * @param int $size Original icon size.
-	 *
-	 * @return int Modified icon size.
-	 */
-	public function author_box_gravatar( int $size ): int {
-		return \genesis_get_config( 'genesis-settings' )['avatar_size'];
-	}
 
-	/**
-	 * Outputs the opening entry wrap markup.
-	 *
-	 * @return void
-	 */
-	public function entry_wrap_open() {
-		if ( is_type_archive() ) {
-			\genesis_markup(
-				[
-					'open'    => '<div %s>',
-					'context' => 'entry-wrap',
-				]
-			);
-		}
-	}
-
-	/**
-	 * Outputs the closing entry wrap markup.
-	 *
-	 * @return void
-	 */
-	public function entry_wrap_close() {
-		if ( is_type_archive() ) {
-			\genesis_markup(
-				[
-					'close'   => '</div>',
-					'context' => 'entry-wrap',
-				]
-			);
-		}
-	}
-
-	/**
-	 * Outputs the opening entry wrap markup in widgets.
-	 *
-	 * @param string $open Opening markup.
-	 * @param array  $args Markup args.
-	 *
-	 * @return string
-	 */
-	public function widget_entry_wrap_open( string $open, array $args ) : string {
-		if ( isset( $args['params']['is_widget'] ) && $args['params']['is_widget'] ) {
-			$markup = \genesis_markup(
-				[
-					'open'    => '<div %s>',
-					'context' => 'entry-wrap',
-					'echo'    => false,
-				]
-			);
-
-			$open = $markup . $open;
-		}
-
-		return $open;
-	}
 }

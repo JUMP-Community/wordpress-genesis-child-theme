@@ -9,44 +9,40 @@ namespace JUMP;
 
 return [
 	'add'    => [
-		// 'align-wide',
-		'automatic-feed-links',
-		// 'editor-styles',
+		'align-wide',
 		'genesis-accessibility'    => [
 			'404-page',
-			// 'drop-down-menu',
 			'headings',
 			'rems',
 			'search-form',
 			'skip-links',
 		],
-		// 'genesis-custom-logo'      => [
-		// 'height'      => 60,
-		// 'width'       => 120,
-		// 'flex-height' => true,
-		// 'flex-width'  => true,
-		// 'header-text' => [
-		// '.site-title',
-		// '.site-description',
-		// ],
-		// ],
-		// 'genesis-footer-widgets'   => 0,
+		'genesis-custom-logo'      => [
+			'height'      => 50,
+			'width'       => 50,
+			'flex-height' => true,
+			'flex-width'  => true,
+			'header-text' => [
+				'.site-title',
+				'.site-description',
+			],
+		],
+		'genesis-footer-widgets'   => 1,
 		'genesis-menus'            => [
-			'primary'      => __( 'Header Menu', 'jump' ),
-			'footer-one'   => __( 'Footer One', 'jump' ),
-			'footer-two'   => __( 'Footer Two', 'jump' ),
-			'footer-three' => __( 'Footer Three', 'jump' ),
-			'footer-four'  => __( 'Footer Four', 'jump' ),
+			'primary'        => __( 'Primary Menu', 'jump' ),
+			'secondary'      => __( 'Secondary Menu', 'jump' ),
+			'footer'         => __( 'Footer Menu', 'jump' ),
+			'command-center' => __( 'Command Center Menu', 'jump' ),
 		],
 		'genesis-structural-wraps' => [
 			'header',
-			'footer',
 			'site-inner',
+			'footer-widgets',
+			'footer',
 		],
-		// 'gutenberg'                => [
-		// 'wide-images' => true,
-		// ],
-		// 'hero-section',
+		'gutenberg'                => [
+			'wide-images' => true,
+		],
 		'html5'                    => [
 			'caption',
 			'comment-form',
@@ -54,13 +50,15 @@ return [
 			'gallery',
 			'search-form',
 		],
-		'post-thumbnails',
 		'responsive-embeds',
-		// phpcs:ignore Squiz.PHP.CommentedOutCode.Found
-		// 'sticky-header',
-		// phpcs:ignore Squiz.PHP.CommentedOutCode.Found
-		// 'transparent-header',
 		'wp-block-styles',
 	],
-	'remove' => [],
+	'remove' => [
+		'genesis-breadcrumbs',
+		'genesis-auto-updates',
+		'genesis-archive-layouts',
+		'genesis-seo-settings-menu',
+		'genesis-import-export-menu',
+		'genesis-customizer-seo-settings',
+	],
 ];

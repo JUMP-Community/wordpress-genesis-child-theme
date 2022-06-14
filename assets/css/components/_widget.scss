@@ -3,13 +3,33 @@
 //
 
 .widget {
-	margin-bottom: $gutter;
+	margin-bottom: $grid-gutter-width;
 
-	// Widget wrapper.
-	&-wrap {}
+	.footer-widgets & {
+		font-size: $h5-font-size;
+		text-align: center;
+	}
 
-	// Widget title.
 	&-title {
-		font-size: $font-size--h5;
+		color: $pink;
+		font-family: $headings-font-family;
+		font-size: $h4-font-size;
+		margin-bottom: $spacing--s;
+
+		.footer-widgets & {
+			font-size: $h1-font-size;
+		}
+	}
+
+	ul,
+	ol {
+
+		@extend .list-unstyled;
+	}
+
+	.post-date {
+		display: block;
+		margin-bottom: $spacing--s;
+		width: 100%;
 	}
 }

@@ -1,0 +1,12 @@
+//
+// Gutenberg block: CoBlocks Author
+//
+
+.wp-block-coblocks-author {
+	border-radius: $border-radius;
+	margin-bottom: $spacing--m;
+
+	&__name {
+		font-weight: $font-weight-bold;
+	}
+}

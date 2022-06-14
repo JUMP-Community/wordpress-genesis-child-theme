@@ -76,7 +76,7 @@ class BootstrapNavWalker extends \Walker_Nav_Menu {
 		 * @since WP 4.8.0
 		 *
 		 * @param array    $classes The CSS classes that are applied to the menu `<ul>` element.
-		 * @param stdClass $args    An object of `wp_nav_menu()` arguments.
+		 * @param object   $args    An object of `wp_nav_menu()` arguments.
 		 * @param int      $depth   Depth of menu item. Used for padding.
 		 */
 		$class_names = join( ' ', apply_filters( 'nav_menu_submenu_css_class', $classes, $args, $depth ) );

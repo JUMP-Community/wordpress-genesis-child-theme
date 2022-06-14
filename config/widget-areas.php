@@ -10,7 +10,8 @@ namespace JUMP;
 return [
 	'add'    => [],
 	'remove' => [
-		'sidebar-alt',
 		'header-right',
+		'sidebar',
+		'sidebar-alt',
 	],
 ];

@@ -37,6 +37,7 @@ class Dashboard {
 		remove_meta_box( 'redux_dashboard_widget', 'dashboard', 'side' );
 		remove_meta_box( 'pressable_dashboard_widget', 'dashboard', 'normal' );
 		remove_meta_box( 'rg_forms_dashboard', 'dashboard', 'normal' );
+		remove_meta_box( 'wpe_dify_news_feed', 'dashboard', 'normal' );
 	}
 
 }

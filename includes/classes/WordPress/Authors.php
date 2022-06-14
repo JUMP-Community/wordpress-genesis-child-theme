@@ -18,7 +18,7 @@ class Authors {
 	/**
 	 * Domain names to block for author archives.
 	 */
-	const ALLOW_LIST_DOMAINS = [ 'joinjump.community' ];
+	const ALLOW_LIST_DOMAINS = [ 'joinjump.community', 'parachute.xyz' ];
 
 	/**
 	 * Setup module

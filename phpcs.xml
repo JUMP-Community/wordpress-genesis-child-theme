@@ -46,7 +46,7 @@
 	<!-- Check all globals have the expected prefix. -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
-			<property name="prefixes" type="array" value="jump,genesis,DISALLOW"/>
+			<property name="prefixes" type="array" value="jump,genesis,DISALLOW,wp_,nav,walker,the"/>
 		</properties>
 	</rule>
 	

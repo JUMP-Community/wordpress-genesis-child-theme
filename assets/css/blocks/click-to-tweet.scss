@@ -1,0 +1,9 @@
+//
+// Gutenberg block: CoBlocks Click To Tweet
+//
+
+.wp-block-coblocks-click-to-tweet {
+
+	@extend .alert;
+	@extend .alert-light;
+}

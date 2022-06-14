@@ -1,0 +1,38 @@
+//
+// Custom mixins.
+//
+
+//
+// Button mixin
+//
+// Used for both front end and block editor styling.
+//
+// @group  Tools
+//
+
+@mixin button {
+	@extend .btn;
+	@extend .btn-jump;
+	border-color: $black;
+	border-radius: 50px;
+	box-shadow: 0 8px 0 -3px $black;
+	color: $white;
+	display: inline-block;
+	margin: 0 0 8px !important;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: $transition-base;
+	white-space: normal;
+	width: auto;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $white;
+		border-color: $black;
+		box-shadow: 0 8px 0 -6px $black;
+		margin: 8px 0 0 !important;
+		outline: none;
+	}
+
+}

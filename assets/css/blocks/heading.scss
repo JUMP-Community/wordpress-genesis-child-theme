@@ -1,0 +1,19 @@
+//
+// Gutenberg block: Heading
+//
+
+.is-style-pink-heading-outline,
+.is-style-black-heading-outline {
+	color: $white;
+	font-weight: $font-weight-bold;
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: $headings-color;
+}
+
+.is-style-pink-heading-outline {
+	-webkit-text-stroke-color: $pink;
+}
+
+.is-style-black-heading-outline {
+	-webkit-text-stroke-color: $body-color;
+}

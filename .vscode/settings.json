@@ -4,6 +4,5 @@
 	"phpcs.executablePath": "./vendor/bin/phpcs",
 	"phpcs.showWarnings": true,
 	"phpcs.composerJsonPath": "./composer.json",
-	"phpcs.autoConfigSearch": false,
-	"php.suggest.basic": true
+	"phpcs.autoConfigSearch": true,
 }

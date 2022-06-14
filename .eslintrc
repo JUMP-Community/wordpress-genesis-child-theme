@@ -1,3 +1,5 @@
 {
-    "extends": ["@10up/eslint-config/wordpress"]
+    "extends": [ 
+		"plugin:@wordpress/eslint-plugin/recommended"
+	]
 }

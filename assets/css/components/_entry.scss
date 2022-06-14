@@ -3,39 +3,36 @@
 //
 
 .entry {
-
-	.featuredpost &,
-	.is-archive & {
-		margin-bottom: $gutter;
-		border: $base--border;
-		border-radius: $base--border--radius;
-		background-color: $color--white;
-
-		&:last-of-type {
-
-			@include mq($until: xs) {
-				margin-bottom: 0;
-			}
-		}
-	}
+	margin-bottom: $spacing--xxl;
 
 	// Entry header.
 	&-header {
+
+		& * {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		& > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(.entry-image) {
+			max-width: $content-width;
+		}
+
+		.page &,
+		.single & {
+			margin-bottom: $spacing--m;
+
+			@include media-breakpoint-up(md) {
+				margin-bottom: $spacing--xl;
+			}
+		}
 	}
 
 	// Entry title.
 	&-title {
+		text-align: left;
 
-		.is-archive & {
-			font-size: $font-size--h4;
-		}
-
-		a {
-			color: $color--text;
-
-			@include hover-focus {
-				color: $color--primary;
-			}
+		.single & {
+			text-align: center;
 		}
 	}
 
@@ -45,6 +42,8 @@
 
 	// Entry time.
 	&-time {
+		color: $body-color;
+		font-weight: $font-weight-bold;
 	}
 
 	// Entry author.
@@ -65,7 +64,34 @@
 
 	// Entry meta.
 	&-meta {
-		font-size: smaller;
+		color: $gray-700;
+		font-size: $font-size-sm;
+		margin-bottom: $spacing--m !important;
+		text-transform: uppercase;
+
+		.single & {
+			margin: $spacing--m auto;
+			text-align: center;
+
+			@include media-breakpoint-up(md) {
+				margin: $spacing--xl auto;
+			}
+		}
+	}
+
+	// Entry image.
+	&-image {
+		border-radius: $border-radius;
+		display: block;
+		max-width: $align-wide;
+		margin: 0 auto $spacing--m;
+		position: relative;
+		width: 100%;
+
+		@include media-breakpoint-up(md) {
+			margin: 0 auto $spacing--l;
+			width: $align-wide;
+		}
 	}
 
 	// Entry image link.
@@ -73,31 +99,27 @@
 		display: block;
 
 		img {
+			border-radius: $border-radius;
 			min-width: 100%;
-			border-radius: $base--border--radius $base--border--radius 0 0;
 		}
 	}
 
 	// Entry content.
 	&-content {
 
-		p {
-
-			&:last-of-type {
-
-			}
+		& * {
+			margin-left: auto;
+			margin-right: auto;
 		}
+
+		& > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide):not(.entry-image) {
+			max-width: $content-width;
+		}
+
 	}
 
 	// Entry footer.
 	&-footer {
-
-		p {
-
-			&:last-of-type {
-				margin-bottom: 0;
-			}
-		}
 	}
 
 	// Entry categories.
@@ -110,10 +132,5 @@
 
 	// Entry wrap.
 	&-wrap {
-		padding: $gap;
 	}
-}
-
-// More link.
-.more-link {
 }

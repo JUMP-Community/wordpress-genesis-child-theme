@@ -2,4 +2,10 @@
 // Site header object.
 //
 
-.site-header {}
+.site-header {
+
+	.admin-bar & {
+		top: var(--wp-admin--admin-bar--height);
+	}
+
+}

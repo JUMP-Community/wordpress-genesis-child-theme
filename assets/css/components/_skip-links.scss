@@ -7,9 +7,9 @@
 	padding: 0;
 
 	li {
-		width: 0;
 		height: 0;
 		list-style: none;
+		width: 0;
 	}
 
 	.screen-reader-shortcut,
@@ -20,16 +20,15 @@
 
 		&:active,
 		&:focus {
-			position: absolute;
-			top: $spacing--s;
+			background-color: $dark;
+			border: 0;
+			color: $white;
 			left: $spacing--s;
 			padding: $spacing--s $spacing--m;
-			color: $color--white;
-			background-color: $color--dark;
-			border: 0;
+			position: absolute;
 			text-decoration: none;
+			top: $spacing--s;
 			z-index: 99999;
 		}
 	}
-
 }

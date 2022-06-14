@@ -2,54 +2,47 @@
 // Title area component.
 //
 
-.title-area {
-	line-height: $line-height--heading;
-
-	@include padding($spacing--m null);
-
-	@include mq(m) {
-
-		@include padding($gap null);
-	}
-}
-
 // Site title.
 .site-title {
+	font-size: $font-size-lg;
+	font-weight: $font-weight-bold;
 	margin: 0;
-	font-size: 1em;
-	font-weight: $font-weight--semibold;
 
 	.wp-custom-logo & {
 
-		@include hide-visually;
+		@include visually-hidden;
 	}
 
 	a {
-		color: $color--text;
+		color: $body-color;
 
-		@include hover-focus {
-			color: $color--primary;
+		&:hover,
+		&:focus,
+		&:active {
+			color: $primary;
 		}
 	}
 }
 
 // Site description.
 .site-description {
+	font-size: $font-size-sm;
 	margin: 0;
-	font-size: small;
 
 	.wp-custom-logo & {
 
-		@include hide-visually;
+		@include visually-hidden;
 	}
 }
 
 // Custom logo.
 .custom-logo {
-	width: auto;
+	border-radius: 3px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	width: 50px;
 
 	&-link {
-		display: flex;
 		align-items: center;
+		display: flex;
 	}
 }

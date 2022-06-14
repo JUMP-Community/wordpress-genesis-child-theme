@@ -1,6 +1,7 @@
 {
 	"name": "jump",
 	"version": "1.0.0",
+	"license": "GPL-2.0-or-later",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/JUMP-Community/wordpress-genesis-child-theme.git"
@@ -17,36 +18,28 @@
 			"role": "Developer"
 		}
 	],
-	"license": "GPL-2.0-or-later",
+	"engines": {
+		"node": ">=16.14.2",
+		"npm": ">=8.10.0"
+	},
 	"devDependencies": {
-		"@10up/stylelint-config": "^1.1.5",
 		"@popperjs/core": "^2.11.2",
-		"10up-toolkit": "^3.1.2",
+		"@wordpress/scripts": "^23.1.0",
 		"bootstrap": "^5.1.3",
-		"stylelint": "^14.7.1",
-		"stylelint-config-standard-scss": "^3.0.0",
-		"stylelint-scss": "^4.2.0",
-		"stylelint-webpack-plugin": "^3.2.0"
+		"eslint": "^8.15.0",
+		"headroom.js": "^0.12.0",
+		"laravel-mix": "^6.0.43",
+		"resolve-url-loader": "^5.0.0",
+		"stylelint": "^14.7.1"
 	},
 	"scripts": {
-		"start": "10up-toolkit build --watch",
-		"build": "10up-toolkit build",
-		"format-js": "10up-toolkit format-js",
-		"format-style": "stylelint path/to/css/file.css --fix",
-		"lint-js": "10up-toolkit lint-js",
-		"lint-style": "10up-toolkit lint-style",
-		"test": "10up-toolkit test-unit-jest"
-	},
-	"10up-toolkit": {
-		"devURL": "https://jump.local",
-		"entry": {
-			"shared": "./assets/js/shared/shared.js",
-			"admin": "./assets/js/admin/admin.js",
-			"frontend": "./assets/js/frontend/frontend.js",
-			"shared-style": "./assets/css/shared.scss",
-			"admin-style": "./assets/css/admin.scss",
-			"editor-style": "./assets/css/editor.scss",
-			"frontend-style": "./assets/css/style.scss"
-		}
+		"start": "npx mix",
+		"watch": "npx mix watch",
+		"build": "npx mix --production",
+		"format-js": "eslint assets/js/**/*.js --fix",
+		"format-style": "stylelint assets/css/**/*.scss --fix",
+		"lint-js": "eslint assets/js/**/*.js",
+		"lint-style": "stylelint assets/css/**/*.scss",
+		"clean": "rm -rf package-lock.json && rm -rf node_modules && rm -rf dist && npm install"
 	}
 }
