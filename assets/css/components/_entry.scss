@@ -34,6 +34,12 @@
 		.single & {
 			text-align: center;
 		}
+
+		.error404 & {
+			margin-left: auto;
+			margin-right: auto;
+			max-width: $content-width;
+		}
 	}
 
 	// Entry title link.

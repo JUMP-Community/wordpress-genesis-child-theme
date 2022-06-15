@@ -2,4 +2,13 @@
 // Search form component.
 //
 
-.search-form {}
+.search-form {
+	display: flex;
+
+	&-submit {
+		@extend .btn;
+		@extend .btn-primary;
+		margin-left: $spacing--m;
+		flex: 0;
+	}
+}

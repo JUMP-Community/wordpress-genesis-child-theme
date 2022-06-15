@@ -29,5 +29,6 @@ input[type="checkbox"],
 input[type="radio"] {
 
 	@extend .form-check-input;
+	display: inline-block;
 }
 
