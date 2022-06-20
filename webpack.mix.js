@@ -15,11 +15,11 @@ mix.setResourceRoot( '../' );
 mix.version();
 
 // Javascript
-mix.js( 'assets/js/frontend/frontend.js', 'dist/js' ).sourceMaps();
+mix.js( 'assets/js/frontend/frontend.js', 'dist/js' );
 
 // Styles
 mix.sass( 'assets/css/frontend-style.scss', 'dist/css', {
 	sassOptions: {
 		outputStyle: 'compressed',
 	},
-} ).sourceMaps();
+} );

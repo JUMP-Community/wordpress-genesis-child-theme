@@ -13,7 +13,11 @@
 	}
 
 	&-description {
-		margin-bottom: $spacing--xxl;
+		margin-bottom: $spacing--l;
+
+		@include media-breakpoint-up(md) {
+			margin-bottom: $spacing--xxl;
+		}
 
 		& * {
 			margin-left: auto;
