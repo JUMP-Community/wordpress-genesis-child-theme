@@ -30,5 +30,6 @@ input[type="radio"] {
 
 	@extend .form-check-input;
 	display: inline-block;
+	padding: 0;
 }
 
