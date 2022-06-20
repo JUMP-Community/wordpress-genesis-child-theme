@@ -1,0 +1,16 @@
+//
+// Nav component.
+//
+
+.nav {
+
+	&-footer {
+
+		.nav-item:last-of-type {
+
+			a {
+				margin-bottom: 0 !important;
+			}
+		}
+	}
+}
