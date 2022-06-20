@@ -45,7 +45,7 @@ class SiteFooter {
 	 * @return string
 	 */
 	public function wrapper_footer( string $output, string $original_output ) : string {
-		$output = 'open' === $original_output ? '<div class="container py-3">' . $output : $output;
+		$output = 'open' === $original_output ? '<div class="container pb-3 pt-md-3">' . $output : $output;
 		$output = 'close' === $original_output ? $output . '</div>' : $output;
 		return $output;
 	}
