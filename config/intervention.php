@@ -70,7 +70,7 @@ return [
 			'category-base' => '',
 			'tag-base'      => '',
 		],
-		'privacy.policy-page' => 3,
+		'privacy.policy-page' => 542,
 	],
 	'wp-admin.all' => [
 		'login'      => [
