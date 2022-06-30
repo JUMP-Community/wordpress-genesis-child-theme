@@ -18,7 +18,7 @@ class Authors {
 	/**
 	 * Domain names to block for author archives.
 	 */
-	const ALLOW_LIST_DOMAINS = [ 'joinjump.community', 'parachute.xyz' ];
+	const ALLOW_LIST_DOMAINS = [ 'jumpcommunity.xyz', 'joinjump.community', 'parachute.xyz' ];
 
 	/**
 	 * Setup module
@@ -62,7 +62,7 @@ class Authors {
 		}
 
 		// E-mail addresses containing the domain will be filtered out on the front-end.
-		if ( false !== stripos( $author->data->user_email, 'joinjump.community' ) ) {
+		if ( false !== stripos( $author->data->user_email, 'jumpcommunity.xyz' ) ) {
 			$is_author_disabled = true;
 		}
 

@@ -21,8 +21,6 @@ class Overrides {
 	 * @return void
 	 */
 	public function setup() {
-		// Disable Application Passwords.
-		add_filter( 'wp_is_application_passwords_available', '__return_false' );
 		// Disable Post By Email on options-writing.php.
 		add_filter( 'enable_post_by_email_configuration', '__return_false' );
 		// Disable Update Services on options-writing.php.
