@@ -9,7 +9,5 @@ parameters:
 		- config/
 		- includes/
 		- templates/
-	ignoreErrors:
-		- '#Function apply_filters invoked with 3 parameters, 2 required.#'
-		- '#Function apply_filters invoked with 4 parameters, 2 required.#'
-		- '#Function apply_filters invoked with 5 parameters, 2 required.#'
+	excludePaths:
+		- includes/classes/BootstrapNavWalker.php
