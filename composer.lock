@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "af38de6e5f76800273e2c34dd791b2a4",
+    "content-hash": "83be54a337295ce0e0cc643bb96d70fd",
     "packages": [
         {
             "name": "johnbillion/args",
@@ -843,11 +843,7 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {
-        "php": "^7.4|^8.0"
-    },
-    "platform-dev": {
-        "php": "^7.4|^8.0"
-    },
+    "platform": [],
+    "platform-dev": [],
     "plugin-api-version": "2.0.0"
 }
