@@ -32,7 +32,6 @@ jobs:
   phpstan:
     name: Static Analysis
     runs-on: ubuntu-latest
-    needs: phpcs
 
     steps:
     - name: Checkout
