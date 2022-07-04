@@ -14,7 +14,7 @@
 
 | Requirement | How to Check | How to Install |
 | :---------- | :----------- | :------------- |
-| PHP >= 7.4 | `php -v` | [php.net](http://php.net/manual/en/install.php) |
+| PHP >= 8.0 | `php -v` | [php.net](http://php.net/manual/en/install.php) |
 | WordPress >= 6.0 | `Admin Footer` | [wordpress.org](https://codex.wordpress.org/Installing_WordPress) |
 | Genesis >= 3.1.1 | `Theme Page` | [studiopress.com](http://www.shareasale.com/r.cfm?b=346198&u=1459023&m=28169&urllink=&afftrack=) |
 | Composer >= 2.0.0 | `composer --version` | [getcomposer.org](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx) |
