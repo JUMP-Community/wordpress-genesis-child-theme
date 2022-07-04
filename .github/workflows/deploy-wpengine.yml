@@ -9,7 +9,7 @@ on:
 
 jobs:
   phpcs:
-    name: Code Linting
+    name: PHP Linting
     runs-on: ubuntu-latest
 
     steps:

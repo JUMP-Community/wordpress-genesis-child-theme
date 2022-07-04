@@ -4,8 +4,47 @@ on:
   pull_request:
 
 jobs:
+  stylelint:
+    name: CSS Linting
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
+    - name: Install Node dependencies
+      run: npm install
+
+    - name: Build Node assets
+      run: npm run lint-style
+
+  eslint:
+    name: JavaScript Linting
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
+    - name: Install Node dependencies
+      run: npm install
+
+    - name: Build Node assets
+      run: npm run lint-js
+
   phpcs:
-    name: Code Linting
+    name: PHP Linting
+    needs: [stylelint,eslint]
     runs-on: ubuntu-latest
 
     steps:
@@ -28,7 +67,7 @@ jobs:
   phpstan:
     name: Static Analysis
     runs-on: ubuntu-latest
-    needs: phpcs
+    needs: [stylelint,eslint,phpcs]
 
     steps:
     - name: Checkout
