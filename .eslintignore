@@ -1,7 +1,9 @@
+# Ignnore directories
 .git
 .github
 .vscode
-node_modules
+build
 dist
+node_modules
 tests
 vendor

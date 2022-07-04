@@ -2,22 +2,12 @@ parameters:
 	level: 1
 	bootstrapFiles:
 		- vendor/php-stubs/wordpress-stubs/wordpress-stubs.php
+		- vendor/php-stubs/genesis-stubs/genesis-stubs.php
 		- vendor/szepeviktor/phpstan-wordpress/bootstrap.php
 	paths:
 		- functions.php
 		- config/
 		- includes/
 		- templates/
-	ignoreErrors:
-		- '#Function genesis not found.#'
-		- '#Function genesis_get_config not found.#'
-		- '#Function genesis_site_layout not found.#'
-		- '#Function genesis_register_widget_area not found.#'
-		- '#Function genesis_unregister_layout not found.#'
-		- '#Function genesis_register_layout not found.#'
-		- '#Function genesis_get_theme_version not found.#'
-		- '#Function genesis_update_settings not found.#'
-		- '#Function genesis_nav_menu not found.#'
-		- '#Function apply_filters invoked with 3 parameters, 2 required.#'
-		- '#Function apply_filters invoked with 4 parameters, 2 required.#'
-		- '#Function apply_filters invoked with 5 parameters, 2 required.#'
+	excludePaths:
+		- includes/classes/BootstrapNavWalker.php

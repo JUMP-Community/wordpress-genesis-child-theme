@@ -8,8 +8,8 @@ const headroom = new Headroom(siteHeader, {
 	tolerance: 3,
 	classes: {
 		initial: 'animated',
-		pinned: 'slideDown',
-		unpinned: 'slideUp',
+		pinned: 'slide-down',
+		unpinned: 'slide-up',
 		top: 'bg-transparent',
 		notTop: 'bg-white shadow-sm',
 	},
