@@ -17,7 +17,8 @@
 	"require": {
 		"php": "^7.4|^8.0",
 		"johnbillion/extended-cpts": "^5.0",
-		"mindkomm/theme-lib-mix": "^1.2"
+		"mindkomm/theme-lib-mix": "^1.2",
+		"php-stubs/genesis-stubs": "^3.3"
 	},
 	"autoload": {
 		"psr-4": {
