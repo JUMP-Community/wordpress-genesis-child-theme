@@ -29,6 +29,8 @@
 
 	img {
 		max-width: 100% !important;
+		page-break-after: avoid;
+		page-break-inside: avoid;
 	}
 
 	@page {
@@ -60,8 +62,6 @@
 	.breadcrumb,
 	.comment-edit-link,
 	.comment-form,
-	.comment-list .reply a,
-	.comment-reply-title,
 	.edit-link,
 	.entry-comments-link,
 	.entry-footer,
@@ -110,11 +110,6 @@
 		page-break-after: avoid;
 		page-break-inside: avoid;
 		widows: 3;
-	}
-
-	img {
-		page-break-after: avoid;
-		page-break-inside: avoid;
 	}
 
 	blockquote,

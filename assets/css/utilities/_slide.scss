@@ -14,7 +14,7 @@
 	will-change: transform, opacity;
 }
 
-@-webkit-keyframes slideDown {
+@-webkit-keyframes slide-down {
 
 	0% {
 		-webkit-transform: translateY(-100%);
@@ -25,7 +25,7 @@
 	}
 }
 
-@-moz-keyframes slideDown {
+@-moz-keyframes slide-down {
 
 	0% {
 		-moz-transform: translateY(-100%);
@@ -36,7 +36,7 @@
 	}
 }
 
-@-o-keyframes slideDown {
+@-o-keyframes slide-down {
 
 	0% {
 		-o-transform: translateY(-100%);
@@ -47,7 +47,7 @@
 	}
 }
 
-@keyframes slideDown {
+@keyframes slide-down {
 
 	0% {
 		transform: translateY(-100%);
@@ -58,14 +58,14 @@
 	}
 }
 
-.animated.slideDown {
-	-webkit-animation-name: slidedown;
-	-moz-animation-name: slidedown;
-	-o-animation-name: slidedown;
-	animation-name: slideDown;
+.animated.slide-down {
+	-webkit-animation-name: slide-down;
+	-moz-animation-name: slide-down;
+	-o-animation-name: slide-down;
+	animation-name: slide-down;
 }
 
-@-webkit-keyframes slideUp {
+@-webkit-keyframes slide-up {
 
 	0% {
 		-webkit-transform: translateY(0);
@@ -76,7 +76,7 @@
 	}
 }
 
-@-moz-keyframes slideUp {
+@-moz-keyframes slide-up {
 
 	0% {
 		-moz-transform: translateY(0);
@@ -87,7 +87,7 @@
 	}
 }
 
-@-o-keyframes slideUp {
+@-o-keyframes slide-up {
 
 	0% {
 		-o-transform: translateY(0);
@@ -98,7 +98,7 @@
 	}
 }
 
-@keyframes slideUp {
+@keyframes slide-up {
 
 	0% {
 		transform: translateY(0);
@@ -109,9 +109,9 @@
 	}
 }
 
-.animated.slideUp {
-	-webkit-animation-name: slideup;
-	-moz-animation-name: slideup;
-	-o-animation-name: slideup;
-	animation-name: slideUp;
+.animated.slide-up {
+	-webkit-animation-name: slide-up;
+	-moz-animation-name: slide-up;
+	-o-animation-name: slide-up;
+	animation-name: slide-up;
 }

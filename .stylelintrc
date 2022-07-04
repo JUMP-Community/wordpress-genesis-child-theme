@@ -5,7 +5,9 @@
 	"rules": {
 		"scss/comment-no-empty": null,
 		"scss/no-global-function-names": null,
+		"scss/at-extend-no-missing-placeholder": null,
 		"block-no-empty": null,
-		"max-line-length": null
+		"max-line-length": null,
+		"function-url-quotes": "always"
 	}
 }

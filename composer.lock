@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aafc811a8a4c6dabf265347a6687a39b",
+    "content-hash": "83be54a337295ce0e0cc643bb96d70fd",
     "packages": [
         {
             "name": "johnbillion/args",
@@ -220,17 +220,61 @@
             "time": "2022-02-04T12:51:07+00:00"
         },
         {
-            "name": "php-stubs/wordpress-stubs",
-            "version": "v6.0.0",
+            "name": "php-stubs/genesis-stubs",
+            "version": "v3.3.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/php-stubs/wordpress-stubs.git",
-                "reference": "ce909ee303ce4bb885e5009a739c19b461944166"
+                "url": "https://github.com/php-stubs/genesis-stubs.git",
+                "reference": "24f8dd329ad4ee11b5f4843d5a8841ca9afc3be5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-stubs/wordpress-stubs/zipball/ce909ee303ce4bb885e5009a739c19b461944166",
-                "reference": "ce909ee303ce4bb885e5009a739c19b461944166",
+                "url": "https://api.github.com/repos/php-stubs/genesis-stubs/zipball/24f8dd329ad4ee11b5f4843d5a8841ca9afc3be5",
+                "reference": "24f8dd329ad4ee11b5f4843d5a8841ca9afc3be5",
+                "shasum": ""
+            },
+            "require": {
+                "php-stubs/wordpress-stubs": "^5.3.0"
+            },
+            "require-dev": {
+                "giacocorsiglia/stubs-generator": "^0.5.0",
+                "php": "~7.1"
+            },
+            "suggest": {
+                "symfony/polyfill-php73": "Symfony polyfill backporting some PHP 7.3+ features to lower PHP versions",
+                "szepeviktor/phpstan-wordpress": "WordPress extensions for PHPStan"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Genesis functions stubs for static analysis.",
+            "homepage": "https://github.com/php-stubs/genesis-stubs",
+            "keywords": [
+                "PHPStan",
+                "genesis",
+                "static analysis",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/php-stubs/genesis-stubs/issues",
+                "source": "https://github.com/php-stubs/genesis-stubs/tree/v3.3.4"
+            },
+            "time": "2021-07-14T10:40:17+00:00"
+        },
+        {
+            "name": "php-stubs/wordpress-stubs",
+            "version": "v5.9.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-stubs/wordpress-stubs.git",
+                "reference": "18d56875e5078a50b8ea4bc4b20b735ca61edeee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-stubs/wordpress-stubs/zipball/18d56875e5078a50b8ea4bc4b20b735ca61edeee",
+                "reference": "18d56875e5078a50b8ea4bc4b20b735ca61edeee",
                 "shasum": ""
             },
             "replace": {
@@ -262,9 +306,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-stubs/wordpress-stubs/issues",
-                "source": "https://github.com/php-stubs/wordpress-stubs/tree/v6.0.0"
+                "source": "https://github.com/php-stubs/wordpress-stubs/tree/v5.9.3"
             },
-            "time": "2022-05-26T14:35:42+00:00"
+            "time": "2022-04-06T15:33:59+00:00"
         },
         {
             "name": "phpcompatibility/php-compatibility",

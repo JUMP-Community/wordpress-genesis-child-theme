@@ -6,6 +6,6 @@
 
 	&-list {
 
-		@extend .list-unstyled;
+		@include list-unstyled;
 	}
 }

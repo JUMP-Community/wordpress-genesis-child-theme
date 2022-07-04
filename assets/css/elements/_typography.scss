@@ -30,9 +30,10 @@ i {
 }
 
 ul {
-	
+
 	&.is-style-none {
-		@extend .list-unstyled;
+
+		@include list-unstyled;
 
 		li {
 			margin-bottom: $paragraph-margin-bottom;

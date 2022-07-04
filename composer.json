@@ -28,7 +28,8 @@
 		"squizlabs/php_codesniffer": "*",
 		"wp-coding-standards/wpcs": "*",
 		"szepeviktor/phpstan-wordpress": "*",
-		"phpstan/extension-installer": "*"
+		"phpstan/extension-installer": "*",
+		"php-stubs/genesis-stubs": "^3.3"
 	},
 	"config": {
 		"allow-plugins": {
