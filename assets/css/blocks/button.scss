@@ -10,6 +10,7 @@
 		@include button;
 
 		.is-style-button-large & {
+
 			@include button;
 			@extend .btn-lg;
 		}

@@ -3,8 +3,9 @@
 //
 
 #mepr {
-	
+
 	&-account-nav {
+
 		@extend .nav;
 		border: $border-width solid $border-color;
 		border-radius: $border-radius;
@@ -16,12 +17,15 @@
 .mepr {
 
 	&-nav-item {
+
 		@extend .nav-item;
 
 		a {
+
 			@extend .nav-link;
 			background: none;
 			border: 0;
+
 			@include border-radius($nav-pills-border-radius);
 		}
 	}
@@ -29,19 +33,23 @@
 	&-active-nav-tab {
 
 		a {
+
 			@extend .active;
 			color: $nav-pills-link-active-color;
-    		@include gradient-bg($nav-pills-link-active-bg);
+
+			@include gradient-bg($nav-pills-link-active-bg);
 		}
 	}
 
 	&-form {
+
 		@extend .alert;
 		@extend .alert-secondary;
 	}
-	
+
 	&-submit,
 	&-share-button {
+
 		@include button;
 	}
 

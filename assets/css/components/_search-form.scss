@@ -6,6 +6,7 @@
 	display: flex;
 
 	&-submit {
+
 		@extend .btn;
 		@extend .btn-primary;
 		margin-left: $spacing--m;

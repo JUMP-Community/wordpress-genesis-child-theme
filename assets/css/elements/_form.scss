@@ -14,9 +14,11 @@ textarea {
 	@extend .form-control;
 }
 
+/* stylelint-disable */
 .gfield_radio,
 .gfield_checkbox {
-
+ /* stylelint-enable */
+ 
 	@extend .form-check;
 
 	label {
