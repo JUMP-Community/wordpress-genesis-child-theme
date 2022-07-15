@@ -34,6 +34,8 @@ class API {
 		// Make sure this runs somewhat late but before core's cookie auth at 100.
 		add_filter( 'rest_authentication_errors', [ $this, 'restrict_rest_api' ], 99 );
 		add_filter( 'rest_endpoints', [ $this, 'restrict_user_endpoints' ] );
+		add_filter( 'rest_endpoints', [ $this, 'restrict_posts_endpoints' ] );
+		add_filter( 'rest_endpoints', [ $this, 'restrict_pages_endpoints' ] );
 	}
 
 	/**
@@ -108,6 +110,59 @@ class API {
 		return $endpoints;
 	}
 
+	/**
+	 * Remove post endpoints for unauthed users.
+	 *
+	 * @param  array $endpoints Array of endpoints.
+	 *
+	 * @return array
+	 */
+	public function restrict_posts_endpoints( array $endpoints ) : array {
+		$restrict = $this->get_restriction_level();
+
+		if ( 'none' === $restrict ) {
+			return $endpoints;
+		}
+
+		if ( ! $this->user_can_access_rest_api() ) {
+			$keys = preg_grep( '/\/wp\/v2\/posts\b/', array_keys( $endpoints ) );
+
+			foreach ( $keys as $key ) {
+				unset( $endpoints[ $key ] );
+			}
+
+			return $endpoints;
+		}
+
+		return $endpoints;
+	}
+
+	/**
+	 * Remove pages endpoints for unauthed users.
+	 *
+	 * @param  array $endpoints Array of endpoints.
+	 *
+	 * @return array
+	 */
+	public function restrict_pages_endpoints( array $endpoints ) : array {
+		$restrict = $this->get_restriction_level();
+
+		if ( 'none' === $restrict ) {
+			return $endpoints;
+		}
+
+		if ( ! $this->user_can_access_rest_api() ) {
+			$keys = preg_grep( '/\/wp\/v2\/pages\b/', array_keys( $endpoints ) );
+
+			foreach ( $keys as $key ) {
+				unset( $endpoints[ $key ] );
+			}
+
+			return $endpoints;
+		}
+
+		return $endpoints;
+	}
 
 	/**
 	 * Check if user can access REST API based on our criteria
@@ -115,7 +170,13 @@ class API {
 	 * @return bool Whether the given user can access the REST API.
 	 */
 	public function user_can_access_rest_api() : bool {
-		return is_user_logged_in();
+		if ( ! is_user_logged_in() ) {
+			return false;
+		}
+		if ( ! current_user_can( 'administrator' ) ) {
+			return false;
+		}
+		return true;
 	}
 
 }
