@@ -115,7 +115,13 @@ class API {
 	 * @return bool Whether the given user can access the REST API.
 	 */
 	public function user_can_access_rest_api() : bool {
-		return is_user_logged_in();
+		if ( ! is_user_logged_in() ) {
+			return false;
+		}
+		if ( ! current_user_can( 'administrator' ) ) {
+			return false;
+		}
+		return true;
 	}
 
 }
