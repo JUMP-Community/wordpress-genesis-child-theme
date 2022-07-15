@@ -38,7 +38,7 @@ class Overrides {
 	 */
 	public function disable_welcome_email() {
 		remove_action( 'register_new_user', 'wp_send_new_user_notifications' );
-		remove_action( 'edit_user_created_user', 'wp_send_new_user_notifications', 10, 2 );
+		remove_action( 'edit_user_created_user', 'wp_send_new_user_notifications' );
 	}
 
 }
