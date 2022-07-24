@@ -21,7 +21,7 @@ class Authors {
 	 * @return void
 	 */
 	public function setup() {
-		add_action( 'wp', [ $this, 'maybe_disable_author_archive' ] );
+		add_action( 'template_redirect', [ $this, 'maybe_disable_author_archive' ] );
 	}
 
 	/**
@@ -39,7 +39,7 @@ class Authors {
 			return;
 		}
 
-		wp_safe_redirect( home_url(), '301' );
+		wp_safe_redirect( home_url(), 301 );
 		exit();
 	}
 }

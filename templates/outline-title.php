@@ -13,7 +13,7 @@ namespace JUMP;
  *
  * @param array $attributes Default attributes.
  *
- * @return string
+ * @return array
  */
 function entry_title_style( array $attributes ) : array {
 	$attributes['class'] .= ' is-style-pink-heading-outline';

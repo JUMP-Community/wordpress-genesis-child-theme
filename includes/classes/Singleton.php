@@ -15,14 +15,14 @@ trait Singleton {
 	/**
 	 * Singleton instance.
 	 *
-	 * @var bool|Singleton
+	 * @var mixed
 	 */
 	private static $instance = false;
 
 	/**
 	 * Return post type instance
 	 *
-	 * @return bool|Singleton
+	 * @return mixed
 	 */
 	public static function instance() {
 		if ( ! self::$instance ) {
