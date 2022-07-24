@@ -12,11 +12,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Setup Node
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
-
     - name: Install Node dependencies
       run: npm install
 
@@ -30,11 +25,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-
-    - name: Setup Node
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
 
     - name: Install Node dependencies
       run: npm install
@@ -50,13 +40,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Setup PHP
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '8.0'
-        coverage: none
-        tools: composer:v2
-
     - name: Install Composer dependencies
       run: composer install
 
@@ -71,15 +54,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Setup PHP
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '8.0'
-        coverage: none
-        tools: composer:v2
-
     - name: Install Composer dependencies
       run: composer install
 
     - name: Static Analysis
-      run: composer run test:static
+      run: composer run static

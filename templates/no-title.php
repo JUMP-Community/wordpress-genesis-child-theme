@@ -25,7 +25,7 @@ function background_image( array $classes ) : array {
  *
  * @param array $attributes Default attributes.
  *
- * @return string
+ * @return array
  */
 function hide_title( array $attributes ) : array {
 	$attributes['class'] .= ' screen-reader-text';

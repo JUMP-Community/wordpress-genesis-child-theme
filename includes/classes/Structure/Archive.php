@@ -38,7 +38,7 @@ class Archive {
 	 * @return void
 	 */
 	public function posts_page_category( \WP_Query $query ) {
-		if ( $query->is_admin() ) {
+		if ( is_admin() ) {
 			return;
 		}
 		if ( ! $query->is_main_query() ) {
