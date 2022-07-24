@@ -54,7 +54,7 @@ class Usernames {
 	public function prevent_common_username( $user, string $username ) {
 		$tld = preg_replace( '#^.*\.(.*)$#', '$1', wp_parse_url( site_url(), PHP_URL_HOST ) );
 
-		if ( in_array( $tld, self::TOP_LEVEL_DOMAINS, true ) ) {
+		if ( ! in_array( $tld, self::TOP_LEVEL_DOMAINS, true ) ) {
 			return new \WP_Error(
 				'Auth Error',
 				__( 'Please have an administrator change your username in order to meet security standards.', 'jump' )

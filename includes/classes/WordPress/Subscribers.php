@@ -49,11 +49,6 @@ class Subscribers {
 	 * @return void
 	 */
 	public function maybe_hide_wp_admin() {
-
-		if ( ! is_user_logged_in() ) {
-			return;
-		}
-
 		if ( current_user_can( 'subscriber' ) ) {
 			wp_safe_redirect( home_url(), 301 );
 			exit();
