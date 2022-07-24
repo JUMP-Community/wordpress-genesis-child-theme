@@ -15,9 +15,8 @@ class Usernames {
 	use Singleton;
 
 	/**
-	 * Constants
+	 * Common user names
 	 */
-	const TOP_LEVEL_DOMAINS = [ 'test', 'local' ];
 	const COMMON_USER_NAMES = [
 		'admin',
 		'administrator',
@@ -52,14 +51,6 @@ class Usernames {
 	 * @return \WP_User|\WP_Error
 	 */
 	public function prevent_common_username( $user, string $username ) {
-		$tld = preg_replace( '#^.*\.(.*)$#', '$1', wp_parse_url( site_url(), PHP_URL_HOST ) );
-
-		if ( ! in_array( $tld, self::TOP_LEVEL_DOMAINS, true ) ) {
-			return new \WP_Error(
-				'Auth Error',
-				__( 'Please have an administrator change your username in order to meet security standards.', 'jump' )
-			);
-		}
 
 		if ( in_array( strtolower( trim( $username ) ), self::COMMON_USER_NAMES, true ) ) {
 			return new \WP_Error(
