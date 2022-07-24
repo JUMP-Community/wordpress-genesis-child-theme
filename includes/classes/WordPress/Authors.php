@@ -16,11 +16,6 @@ class Authors {
 	use Singleton;
 
 	/**
-	 * Domain names to block for author archives.
-	 */
-	const ALLOW_LIST_DOMAINS = [ 'jumpcommunity.xyz', 'joinjump.community', 'parachute.xyz' ];
-
-	/**
 	 * Setup module
 	 *
 	 * @return void
@@ -44,31 +39,7 @@ class Authors {
 			return;
 		}
 
-		$is_author_disabled = false;
-		$author             = get_queried_object();
-		$current_domain     = wp_parse_url( get_site_url(), PHP_URL_HOST );
-
-		// Perform partial match on domains to catch subdomains or variation of domain name.
-		$filtered_domains = array_filter(
-			self::ALLOW_LIST_DOMAINS,
-			function( $domain ) use ( $current_domain ) {
-				return false !== stripos( $current_domain, $domain );
-			}
-		);
-
-		// If the query object doesn't have a user e-mail address, bail.
-		if ( ! empty( $filtered_domains ) || empty( $author->data->user_email ) ) {
-			return;
-		}
-
-		// E-mail addresses containing the domain will be filtered out on the front-end.
-		if ( false !== stripos( $author->data->user_email, 'jumpcommunity.xyz' ) ) {
-			$is_author_disabled = true;
-		}
-
-		if ( true === $is_author_disabled ) {
-			wp_safe_redirect( home_url(), '301' );
-			exit();
-		}
+		wp_safe_redirect( home_url(), '301' );
+		exit();
 	}
 }
